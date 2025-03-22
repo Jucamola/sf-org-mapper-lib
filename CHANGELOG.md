@@ -1,3 +1,12 @@
+## [0.0.6](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.0.5...0.0.6) (2025-03-22)
+
+
+### Bug Fixes
+
+* **deps:** bump @salesforce/core from 6.7.1 to 6.7.6 ([1fb6119](https://github.com/Jucamola/sf-org-mapper-lib/commit/1fb6119f71c7bfe93d5cd9a8a9e5412805244952))
+
+
+
 ## [0.0.5](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.0.4...0.0.5) (2025-03-22)
 
 
