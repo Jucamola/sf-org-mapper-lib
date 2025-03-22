@@ -1,3 +1,20 @@
+# [0.1.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.0.6...0.1.0) (2025-03-22)
+
+
+### Bug Fixes
+
+* add repl script ([fcac0a3](https://github.com/Jucamola/sf-org-mapper-lib/commit/fcac0a3cd56bdf3d29463d8dc7d56bcc62b1a3e2))
+* remove hello world class ([6a9dfd6](https://github.com/Jucamola/sf-org-mapper-lib/commit/6a9dfd672b42c4c40e0500597ea5c09ea6eb8c0d))
+
+
+### Features
+
+* add build graph function ([d625e45](https://github.com/Jucamola/sf-org-mapper-lib/commit/d625e45319a82b748ef9d065e6436cdcf502421c))
+* add parse for metadata component dependency csvs ([998966b](https://github.com/Jucamola/sf-org-mapper-lib/commit/998966b5038cf0999bf39b982512aec8e3fb7f4e))
+* add query apexclass metadata ([1bcfcdd](https://github.com/Jucamola/sf-org-mapper-lib/commit/1bcfcdd59b3c3834498c0bd56da2f8bbee800bf7))
+
+
+
 ## [0.0.6](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.0.5...0.0.6) (2025-03-22)
 
 
