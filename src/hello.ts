@@ -8,7 +8,7 @@
 import { Messages, Logger } from '@salesforce/core';
 
 Messages.importMessagesDirectory(__dirname);
-const messages = Messages.loadMessages('@jucamola/sf-org-mapper-lib', 'hello');
+const messages = Messages.loadMessages('sf-org-mapper-lib', 'hello');
 
 export class Hello {
   private logger!: Logger;
