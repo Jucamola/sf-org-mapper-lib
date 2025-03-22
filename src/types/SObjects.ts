@@ -15,3 +15,41 @@ export type MetadataComponentDependency = {
   RefMetadataComponentName: string;
   RefMetadataComponentType: string;
 };
+
+type NodeData = {
+  Label: string;
+  Type: OrgMetadataTypeNames;
+};
+
+export type ManageableState =
+  | 'beta'
+  | 'deleted'
+  | 'deprecated'
+  | 'deprecatedEditable'
+  | 'installed'
+  | 'installedEditable'
+  | 'released'
+  | 'unmanaged'
+  | 'standardEntity';
+
+export type Status = 'Active' | 'Deleted' | 'Inactive';
+
+export type ApexClass = NodeData & {
+  ApiVersion: number;
+  IsTest: boolean;
+  IsValid: boolean;
+  LengthWithoutComments: number;
+  ManageableState: ManageableState;
+  Name: string;
+  Status: Status;
+  NamespacePrefix: string;
+};
+
+type Id = string;
+
+export type OrgMetadataTypeNames = 'ApexClass' | 'Unknown';
+
+export type OrgMetadataTypes = ApexClass;
+export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
+
+export type OrgMetadata = Map<OrgMetadataTypeNames, OrgMetadataMap>;

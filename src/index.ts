@@ -6,3 +6,4 @@
  */
 
 export { parseCSVFile } from './csv';
+export { queryMetadatas } from './metadata';

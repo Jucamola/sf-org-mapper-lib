@@ -2,7 +2,7 @@
 
 const repl = require('repl');
 const { Org } = require('@salesforce/core');
-const { parseCSVFile } = require('../lib/index');
+const { parseCSVFile, queryMetadatas } = require('../lib/index');
 
 const startMessage = `
 Usage:
@@ -16,6 +16,7 @@ replServer.setupHistory('.repl_history', (err, repl) => {});
 
 const context = {
   parseCSVFile,
+  queryMetadatas,
   getConnection: async (username) => {
     const org = await Org.create({ aliasOrUsername: username });
     return org.getConnection();
