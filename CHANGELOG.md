@@ -1,3 +1,12 @@
+## [0.0.4](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.0.3...0.0.4) (2025-03-22)
+
+
+### Bug Fixes
+
+* remove namespace from package ([7ff1421](https://github.com/Jucamola/sf-org-mapper-lib/commit/7ff14211b8cb24bc387f2d0156e5c3bdf580413d))
+
+
+
 ## [0.0.3](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.0.2...0.0.3) (2025-03-22)
 
 
