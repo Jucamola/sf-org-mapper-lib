@@ -44,3 +44,6 @@ node_modules
 
 # history for repl script
 .repl_history
+
+# data for testing and debugging
+data/*
