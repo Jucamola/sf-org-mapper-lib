@@ -1,3 +1,12 @@
+## [0.0.5](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.0.4...0.0.5) (2025-03-22)
+
+
+### Bug Fixes
+
+* sets secrets for devScripts pipeline ([6cb62fb](https://github.com/Jucamola/sf-org-mapper-lib/commit/6cb62fb84c15e8f9e798bfd477b80d5de21e2185))
+
+
+
 ## [0.0.4](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.0.3...0.0.4) (2025-03-22)
 
 
