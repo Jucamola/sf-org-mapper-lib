@@ -17,6 +17,7 @@
     "lint-fix": "yarn sf-lint --fix",
     "prepack": "sf-prepack",
     "prepare": "sf-install",
+    "repl": "node --inspect ./scripts/repl.js",
     "test": "wireit",
     "test:nuts": "nyc mocha \"**/*.nut.ts\" --slow 4500 --timeout 600000 --parallel",
     "test:nuts:local": "mocha \"**/local/*.nut.ts\" --slow 4500 --timeout 600000 --parallel",
