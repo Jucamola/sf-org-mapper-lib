@@ -2,7 +2,7 @@
 
 const repl = require('repl');
 const { Org } = require('@salesforce/core');
-const { parseCSVFile, queryMetadatas } = require('../lib/index');
+const { buildGraph, parseCSVFile, queryMetadatas } = require('../lib/index');
 
 const startMessage = `
 Usage:
@@ -15,6 +15,7 @@ const replServer = repl.start({ breakEvalOnSigint: true });
 replServer.setupHistory('.repl_history', (err, repl) => {});
 
 const context = {
+  buildGraph,
   parseCSVFile,
   queryMetadatas,
   getConnection: async (username) => {
