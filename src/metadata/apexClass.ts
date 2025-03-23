@@ -8,7 +8,7 @@
 import { Connection } from '@salesforce/core';
 import { ManageableState, OrgMetadataMap, OrgMetadataTypeNames, Status } from '../types/SObjects';
 
-interface SymbolTable {
+type SymbolTable = {
   tableDeclaration?: {
     annotations?: Array<{ name: string }>;
   };
