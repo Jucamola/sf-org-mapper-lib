@@ -8,3 +8,4 @@
 export { parseCSVFile } from './csv';
 export { queryMetadatas } from './metadata';
 export { buildGraph } from './graph';
+export { writeGexf } from './gexf';

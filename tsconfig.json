@@ -4,7 +4,9 @@
     "outDir": "./lib",
     "strictNullChecks": true,
     "plugins": [{ "transform": "@salesforce/core/lib/messageTransformer", "import": "messageTransformer" }],
-    "lib": ["dom"]
+    "lib": ["dom"],
+    "target": "ES2022",
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
   "include": ["src/**/*.ts"]
 }

@@ -2,7 +2,7 @@
 
 const repl = require('repl');
 const { Org } = require('@salesforce/core');
-const { buildGraph, parseCSVFile, queryMetadatas } = require('../lib/index');
+const { buildGraph, parseCSVFile, queryMetadatas, writeGexf } = require('../lib/index');
 
 const startMessage = `
 Usage:
@@ -18,6 +18,7 @@ const context = {
   buildGraph,
   parseCSVFile,
   queryMetadatas,
+  writeGexf,
   getConnection: async (username) => {
     const org = await Org.create({ aliasOrUsername: username });
     return org.getConnection();

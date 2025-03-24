@@ -3938,6 +3938,34 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
+ngraph.events@1.2.2, ngraph.events@^1.2.1:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/ngraph.events/-/ngraph.events-1.2.2.tgz#3ceb92d676a04a4e7ce60a09fa8e17a4f0346d7f"
+  integrity sha512-JsUbEOzANskax+WSYiAPETemLWYXmixuPAlmZmhIbIj6FH/WDgEGCGnRwUQBK0GjOnVm8Ui+e5IJ+5VZ4e32eQ==
+
+ngraph.gexf@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ngraph.gexf/-/ngraph.gexf-1.0.0.tgz#1d91e26df40e0863f4760bf3d12a94dea6ce4686"
+  integrity sha512-Z0WPha5ZK2uhaXPlf1azhQwvel+geFFNmIkW/miRHOrEyvmaqFskzFdFpDC/QwQDVgbCh6b8mC4Ls1s7sZ4wDw==
+  dependencies:
+    ngraph.events "1.2.2"
+    ngraph.graph "20.0.0"
+    streaming-svg-parser "^1.1.0"
+
+ngraph.graph@20.0.0:
+  version "20.0.0"
+  resolved "https://registry.yarnpkg.com/ngraph.graph/-/ngraph.graph-20.0.0.tgz#96dcce92c74405085d6c27a86218f336769b4472"
+  integrity sha512-tJqmik6U5geNDSbmTSwm4R6coTMDbkfFFHD8wdeSJtKU/cxIWFsKtXuwMva/wTk6tQQl1C2//lrzmwfPJXAXHw==
+  dependencies:
+    ngraph.events "^1.2.1"
+
+ngraph.graph@^20.0.1:
+  version "20.0.1"
+  resolved "https://registry.yarnpkg.com/ngraph.graph/-/ngraph.graph-20.0.1.tgz#579470d1d805583239704dc913e2095540aaf371"
+  integrity sha512-VFsQ+EMkT+7lcJO1QP8Ik3w64WbHJl27Q53EO9hiFU9CRyxJ8HfcXtfWz/U8okuoYKDctbciL6pX3vG5dt1rYA==
+  dependencies:
+    ngraph.events "^1.2.1"
+
 nise@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/nise/-/nise-4.1.0.tgz#8fb75a26e90b99202fa1e63f448f58efbcdedaf6"
@@ -5110,6 +5138,11 @@ srcset@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/srcset/-/srcset-5.0.1.tgz#e660a728f195419e4afa95121099bc9efb7a1e36"
   integrity sha512-/P1UYbGfJVlxZag7aABNRrulEXAwCSDo7fklafOQrantuPTDmYgijJMks2zusPCVzgW9+4P69mq7w6pYuZpgxw==
+
+streaming-svg-parser@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/streaming-svg-parser/-/streaming-svg-parser-1.1.0.tgz#0e7b8f646b187742306ff3c6659e8d6c990ff891"
+  integrity sha512-QzrnK97C97AUw60iM8CKdgxuhOUBb8T/UAD/CK/hRq66MBmaTuWli7oJ9RfgJJf/e+XyVFtNfkEro4MifRAUsA==
 
 "string-width-cjs@npm:string-width@^4.2.0":
   version "4.2.3"
