@@ -6,13 +6,13 @@
  */
 
 import { expect } from 'chai';
-import { buildGraph } from '../../src/graph/index';
+import { buildGraph } from '../../../src/graph/index';
 import {
   OrgMetadata,
   OrgMetadataMap,
   MetadataComponentDependency,
   OrgMetadataTypeNames,
-} from '../../src/types/SObjects';
+} from '../../../src/types/SObjects';
 
 describe('buildGraph', () => {
   it('should create an empty graph when no metadata is provided', () => {
