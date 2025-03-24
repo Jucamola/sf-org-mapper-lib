@@ -1,3 +1,17 @@
+# [0.2.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.1.0...0.2.0) (2025-03-24)
+
+
+### Bug Fixes
+
+* move test to proper folder ([db81614](https://github.com/Jucamola/sf-org-mapper-lib/commit/db81614a4193ae82c7d211c48ee14724784e9db1))
+
+
+### Features
+
+* adds write gexfs function ([257a185](https://github.com/Jucamola/sf-org-mapper-lib/commit/257a185890fb9c1821e1712e85db273216b710e4))
+
+
+
 # [0.1.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.0.6...0.1.0) (2025-03-22)
 
 
