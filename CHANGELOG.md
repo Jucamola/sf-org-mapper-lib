@@ -1,3 +1,20 @@
+# [0.3.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.2.0...0.3.0) (2025-03-25)
+
+
+### Bug Fixes
+
+* rename file ([80be01b](https://github.com/Jucamola/sf-org-mapper-lib/commit/80be01b3709ded6ff3478dcefe507b05994a53ab))
+
+
+### Features
+
+* add apexcomponent ([3c30953](https://github.com/Jucamola/sf-org-mapper-lib/commit/3c3095387f12a907b707a8f72528bdcb6a165085))
+* add ApexPage ([498c455](https://github.com/Jucamola/sf-org-mapper-lib/commit/498c4555d2fbe5895842cd0f9bbfddf3b8d04072))
+* add ApexTrigger ([2e17a12](https://github.com/Jucamola/sf-org-mapper-lib/commit/2e17a1281f26fb399d8be8741132b131109d0cf3))
+* add CustomApplication ([50d49c7](https://github.com/Jucamola/sf-org-mapper-lib/commit/50d49c74e3e0c4ced6e1811f5e84bbdd6f3a58a4))
+
+
+
 # [0.2.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.1.0...0.2.0) (2025-03-24)
 
 
