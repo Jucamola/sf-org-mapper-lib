@@ -37,12 +37,12 @@ export type Status = 'Active' | 'Deleted' | 'Inactive';
 export type Metadata = NodeData & {
   ApiVersion: number;
   ManageableState: ManageableState;
-  Name: string;
   NamespacePrefix: string;
   LastModifiedDate: Date;
 };
 
 type ApexCode = Metadata & {
+  Name: string;
   IsValid: boolean;
   LengthWithoutComments: number;
   Status: Status;
@@ -65,11 +65,22 @@ export type ApexPage = Metadata & {
   Type: 'ApexPage';
 };
 
+export type CustomApplication = Metadata & {
+  DeveloperName: string;
+  Type: 'CustomApplication';
+};
+
 type Id = string;
 
-export type OrgMetadataTypeNames = 'ApexClass' | 'ApexComponent' | 'ApexPage' | 'ApexTrigger' | 'Unknown';
+export type OrgMetadataTypeNames =
+  | 'ApexClass'
+  | 'ApexComponent'
+  | 'ApexPage'
+  | 'ApexTrigger'
+  | 'CustomApplication'
+  | 'Unknown';
 
-export type OrgMetadataTypes = ApexClass | ApexComponent | ApexPage | ApexTrigger;
+export type OrgMetadataTypes = ApexClass | ApexComponent | ApexPage | ApexTrigger | CustomApplication;
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
 export type OrgMetadata = Map<OrgMetadataTypeNames, OrgMetadataMap>;
