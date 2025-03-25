@@ -9,9 +9,9 @@ import { Connection, SfError } from '@salesforce/core';
 import { expect } from 'chai';
 import { instantiateContext, MockTestOrgData, restoreContext, stubContext } from '@salesforce/core/lib/testSetup';
 import { OrgMetadataMap } from '../../../src/types/SObjects';
-import { queryApexClasses } from '../../../src/metadata/apexClass';
+import { queryApexComponents } from '../../../src/metadata/apexComponent';
 
-describe('apexClass', () => {
+describe('apexComponent', () => {
   const testOrg = new MockTestOrgData();
   const $$ = instantiateContext();
   let conn: Connection;
@@ -28,120 +28,73 @@ describe('apexClass', () => {
     restoreContext($$);
   });
 
-  it('should query ApexClasses and return an OrgMetadataMap', async () => {
-    const mockApexClasses = {
+  it('should query ApexComponents and return an OrgMetadataMap', async () => {
+    const mockApexComponents = {
       records: [
         {
           Id: '01p000000000001AAA',
           NamespacePrefix: 'ns1',
-          Name: 'MyClass1',
+          Name: 'MyComponent1',
           ApiVersion: 55.0,
-          Status: 'Active',
-          IsValid: true,
-          BodyCrc: 12_345,
-          LengthWithoutComments: 100,
-          CreatedDate: '2023-01-01T00:00:00.000Z',
-          CreatedById: '005000000000001AAA',
           LastModifiedDate: '2023-01-02T00:00:00.000Z',
-          LastModifiedById: '005000000000002AAA',
-          SystemModstamp: '2023-01-02T00:00:00.000Z',
           ManageableState: 'unmanaged',
-          SymbolTable: {
-            tableDeclaration: {
-              annotations: [{ name: 'IsTest' }],
-            },
-          },
         },
         {
           Id: '01p000000000002AAA',
           NamespacePrefix: null,
-          Name: 'MyClass2',
+          Name: 'MyComponent2',
           ApiVersion: 56.0,
-          Status: 'Active',
-          IsValid: true,
-          BodyCrc: 67_890,
-          LengthWithoutComments: 200,
-          CreatedDate: '2023-02-01T00:00:00.000Z',
-          CreatedById: '005000000000001AAA',
           LastModifiedDate: '2023-02-02T00:00:00.000Z',
-          LastModifiedById: '005000000000002AAA',
-          SystemModstamp: '2023-02-02T00:00:00.000Z',
           ManageableState: 'installed',
-          SymbolTable: {
-            tableDeclaration: {
-              annotations: [{ name: 'OtherAnnotation' }],
-            },
-          },
         },
         {
           Id: '01p000000000003AAA',
           NamespacePrefix: null,
-          Name: 'MyClass3',
+          Name: 'MyComponent3',
           ApiVersion: 57.0,
-          Status: 'Deleted',
-          IsValid: false,
-          BodyCrc: 13_579,
-          LengthWithoutComments: 300,
-          CreatedDate: '2023-03-01T00:00:00.000Z',
-          CreatedById: '005000000000001AAA',
           LastModifiedDate: '2023-03-02T00:00:00.000Z',
-          LastModifiedById: '005000000000002AAA',
-          SystemModstamp: '2023-03-02T00:00:00.000Z',
           ManageableState: 'released',
-          SymbolTable: undefined,
         },
       ],
       done: true,
       totalSize: 3,
     };
-    queryStub.resolves(mockApexClasses);
+    queryStub.resolves(mockApexComponents);
 
-    const result: OrgMetadataMap = await queryApexClasses(conn);
+    const result: OrgMetadataMap = await queryApexComponents(conn);
 
     expect(queryStub.calledOnce).to.be.true;
     expect(result.size).to.equal(3);
 
     const class1 = result.get('01p000000000001AAA');
     expect(class1).to.deep.equal({
-      Label: 'MyClass1',
-      Type: 'ApexClass',
+      Label: 'MyComponent1',
+      Type: 'ApexComponent',
       ApiVersion: 55.0,
-      IsTest: true,
-      IsValid: true,
-      LengthWithoutComments: 100,
       ManageableState: 'unmanaged',
-      Name: 'MyClass1',
-      Status: 'Active',
+      Name: 'MyComponent1',
       NamespacePrefix: 'ns1',
       LastModifiedDate: new Date('2023-01-02T00:00:00.000Z'),
     });
 
     const class2 = result.get('01p000000000002AAA');
     expect(class2).to.deep.equal({
-      Label: 'MyClass2',
-      Type: 'ApexClass',
+      Label: 'MyComponent2',
+      Type: 'ApexComponent',
       ApiVersion: 56.0,
-      IsTest: false,
-      IsValid: true,
-      LengthWithoutComments: 200,
       ManageableState: 'installed',
-      Name: 'MyClass2',
-      Status: 'Active',
+      Name: 'MyComponent2',
       NamespacePrefix: null,
       LastModifiedDate: new Date('2023-02-02T00:00:00.000Z'),
     });
 
     const class3 = result.get('01p000000000003AAA');
     expect(class3).to.deep.equal({
-      Label: 'MyClass3',
-      Type: 'ApexClass',
+      Label: 'MyComponent3',
+      Type: 'ApexComponent',
       ApiVersion: 57.0,
-      IsTest: false,
-      IsValid: false,
-      LengthWithoutComments: 300,
       ManageableState: 'released',
-      Name: 'MyClass3',
-      Status: 'Deleted',
+      Name: 'MyComponent3',
       NamespacePrefix: null,
       LastModifiedDate: new Date('2023-03-02T00:00:00.000Z'),
     });
@@ -151,8 +104,8 @@ describe('apexClass', () => {
     queryStub.rejects(new SfError('Query failed'));
 
     try {
-      await queryApexClasses(conn);
-      expect.fail('Expected queryApexClasses to throw an error');
+      await queryApexComponents(conn);
+      expect.fail('Expected queryApexComponents to throw an error');
     } catch (error) {
       expect((error as Error).message).to.equal('Query failed');
     }
@@ -161,7 +114,7 @@ describe('apexClass', () => {
   it('should handle empty query results', async () => {
     queryStub.resolves({ records: [], done: true, totalSize: 0 });
 
-    const result: OrgMetadataMap = await queryApexClasses(conn);
+    const result: OrgMetadataMap = await queryApexComponents(conn);
 
     expect(queryStub.calledOnce).to.be.true;
     expect(result.size).to.equal(0);

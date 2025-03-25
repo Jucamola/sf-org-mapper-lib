@@ -6,7 +6,16 @@
  */
 
 import cytoscape = require('cytoscape');
-import { MetadataComponentDependency, OrgMetadata } from '../types/SObjects';
+import { Logger } from '@salesforce/core';
+import { ApexClass, MetadataComponentDependency, OrgMetadata } from '../types/SObjects';
+
+let logger: Logger;
+const getLogger = (): Logger => {
+  if (!logger) {
+    logger = Logger.childFromRoot('buildGraph');
+  }
+  return logger;
+};
 
 export function buildGraph(
   orgMetadata: OrgMetadata,
@@ -22,14 +31,20 @@ export function buildGraph(
           id,
           Label: nodeData.Label,
           Type: nodeData.Type,
-          isTest: nodeData?.IsTest,
+          isTest: (nodeData as ApexClass)?.IsTest,
         },
       });
     }
   }
 
   metadataComponentDependencies.forEach((edge) => {
-    graph.add({ group: 'edges', data: { source: edge.MetadataComponentId, target: edge.RefMetadataComponentId } });
+    try {
+      graph.add({ group: 'edges', data: { source: edge.MetadataComponentId, target: edge.RefMetadataComponentId } });
+    } catch (e) {
+      if (e instanceof Error) {
+        getLogger().warn(e.message);
+      }
+    }
   });
 
   return graph;

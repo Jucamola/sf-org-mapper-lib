@@ -7,12 +7,7 @@
 
 import { expect } from 'chai';
 import { buildGraph } from '../../../src/graph/index';
-import {
-  OrgMetadata,
-  OrgMetadataMap,
-  MetadataComponentDependency,
-  OrgMetadataTypeNames,
-} from '../../../src/types/SObjects';
+import { OrgMetadata, OrgMetadataMap, MetadataComponentDependency } from '../../../src/types/SObjects';
 
 describe('buildGraph', () => {
   it('should create an empty graph when no metadata is provided', () => {
@@ -39,6 +34,7 @@ describe('buildGraph', () => {
       Name: 'MyClass1',
       Status: 'Active',
       NamespacePrefix: 'ns1',
+      LastModifiedDate: new Date(),
     });
     apexClassMap.set('01p000000000002AAA', {
       Label: 'MyClass2',
@@ -51,6 +47,7 @@ describe('buildGraph', () => {
       Name: 'MyClass2',
       Status: 'Active',
       NamespacePrefix: '',
+      LastModifiedDate: new Date(),
     });
     orgMetadata.set('ApexClass', apexClassMap);
 
@@ -77,7 +74,7 @@ describe('buildGraph', () => {
     const apexClassMap: OrgMetadataMap = new Map();
     apexClassMap.set('01p000000000001AAA', {
       Label: 'MyClass1',
-      Type: 'ApexClass' as OrgMetadataTypeNames,
+      Type: 'ApexClass',
       ApiVersion: 55.0,
       IsTest: true,
       IsValid: true,
@@ -86,10 +83,11 @@ describe('buildGraph', () => {
       Name: 'MyClass1',
       Status: 'Active',
       NamespacePrefix: 'ns1',
+      LastModifiedDate: new Date(),
     });
     apexClassMap.set('01p000000000002AAA', {
       Label: 'MyClass2',
-      Type: 'ApexClass' as OrgMetadataTypeNames,
+      Type: 'ApexClass',
       ApiVersion: 56.0,
       IsTest: false,
       IsValid: true,
@@ -98,6 +96,7 @@ describe('buildGraph', () => {
       Name: 'MyClass2',
       Status: 'Active',
       NamespacePrefix: '',
+      LastModifiedDate: new Date(),
     });
     orgMetadata.set('ApexClass', apexClassMap);
 

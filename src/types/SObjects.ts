@@ -34,22 +34,31 @@ export type ManageableState =
 
 export type Status = 'Active' | 'Deleted' | 'Inactive';
 
-export type ApexClass = NodeData & {
+export type Metadata = NodeData & {
   ApiVersion: number;
+  ManageableState: ManageableState;
+  Name: string;
+  NamespacePrefix: string;
+  LastModifiedDate: Date;
+};
+
+export type ApexClass = Metadata & {
+  Type: 'ApexClass';
   IsTest: boolean;
   IsValid: boolean;
   LengthWithoutComments: number;
-  ManageableState: ManageableState;
-  Name: string;
   Status: Status;
-  NamespacePrefix: string;
+};
+
+export type ApexComponent = Metadata & {
+  Type: 'ApexComponent';
 };
 
 type Id = string;
 
-export type OrgMetadataTypeNames = 'ApexClass' | 'Unknown';
+export type OrgMetadataTypeNames = 'ApexClass' | 'ApexComponent' | 'Unknown';
 
-export type OrgMetadataTypes = ApexClass;
+export type OrgMetadataTypes = ApexClass | ApexComponent;
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
 export type OrgMetadata = Map<OrgMetadataTypeNames, OrgMetadataMap>;

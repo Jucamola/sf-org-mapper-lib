@@ -6,18 +6,17 @@
  */
 
 import { Connection } from '@salesforce/core';
-import { ManageableState, OrgMetadataMap, OrgMetadataTypeNames, Status } from '../types/SObjects';
+import { ManageableState, OrgMetadataMap, Status } from '../types/SObjects';
 
-interface SymbolTable {
+type SymbolTable = {
   tableDeclaration?: {
     annotations?: Array<{ name: string }>;
   };
-}
+};
 
 export async function queryApexClasses(conn: Connection): Promise<OrgMetadataMap> {
   const apexClasses = await conn.tooling.query(
-    `SELECT  Id, NamespacePrefix, Name, ApiVersion, Status, IsValid, BodyCrc, LengthWithoutComments, 
-               CreatedDate, CreatedById, LastModifiedDate, LastModifiedById, SystemModstamp, ManageableState, SymbolTable 
+    `SELECT  Id, NamespacePrefix, Name, ApiVersion, Status, IsValid, LengthWithoutComments, LastModifiedDate, ManageableState, SymbolTable 
       FROM ApexClass`,
     {
       autoFetch: true,
@@ -31,7 +30,7 @@ export async function queryApexClasses(conn: Connection): Promise<OrgMetadataMap
         record.Id as string,
         {
           Label: record.Name as string,
-          Type: 'ApexClass' as OrgMetadataTypeNames,
+          Type: 'ApexClass',
           ApiVersion: Number(record.ApiVersion),
           IsTest:
             (symbolTable?.tableDeclaration?.annotations?.some(
@@ -43,6 +42,7 @@ export async function queryApexClasses(conn: Connection): Promise<OrgMetadataMap
           Name: record.Name as string,
           Status: record.Status as Status,
           NamespacePrefix: record.NamespacePrefix as string,
+          LastModifiedDate: new Date(record.LastModifiedDate as string),
         },
       ];
     })

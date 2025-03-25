@@ -8,6 +8,10 @@ const startMessage = `
 Usage:
   // Get an org Connection
   const conn = await getConnection(username);
+  const metadataComponentDependencies = parseCSVFile("data/data.csv")
+  const metadatas = await queryMetadatas(conn);
+  const graph = buildGraph(metadatas, metadataComponentDependencies);
+  writeGexf(graph,'data/data', metadatas)
 `;
 console.log(startMessage);
 
