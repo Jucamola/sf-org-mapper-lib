@@ -42,12 +42,19 @@ export type Metadata = NodeData & {
   LastModifiedDate: Date;
 };
 
-export type ApexClass = Metadata & {
-  Type: 'ApexClass';
-  IsTest: boolean;
+type ApexCode = Metadata & {
   IsValid: boolean;
   LengthWithoutComments: number;
   Status: Status;
+};
+
+export type ApexClass = ApexCode & {
+  Type: 'ApexClass';
+  IsTest: boolean;
+};
+
+export type ApexTrigger = ApexCode & {
+  Type: 'ApexTrigger';
 };
 
 export type ApexComponent = Metadata & {
@@ -60,9 +67,9 @@ export type ApexPage = Metadata & {
 
 type Id = string;
 
-export type OrgMetadataTypeNames = 'ApexClass' | 'ApexComponent' | 'ApexPage' | 'Unknown';
+export type OrgMetadataTypeNames = 'ApexClass' | 'ApexComponent' | 'ApexPage' | 'ApexTrigger' | 'Unknown';
 
-export type OrgMetadataTypes = ApexClass | ApexComponent | ApexPage;
+export type OrgMetadataTypes = ApexClass | ApexComponent | ApexPage | ApexTrigger;
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
 export type OrgMetadata = Map<OrgMetadataTypeNames, OrgMetadataMap>;

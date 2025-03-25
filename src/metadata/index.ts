@@ -10,16 +10,19 @@ import { OrgMetadata } from '../types/sObjects';
 import { queryApexClasses } from './apexClass';
 import { queryApexComponents } from './apexComponent';
 import { queryApexPages } from './apexPage';
+import { queryApexTriggers } from './apexTrigger';
 
 export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   const orgMetadata = new Map();
-  const [apexClasses, apexComponents, apexPages] = await Promise.all([
+  const [apexClasses, apexComponents, apexPages, apexTriggers] = await Promise.all([
     queryApexClasses(conn),
     queryApexComponents(conn),
     queryApexPages(conn),
+    queryApexTriggers(conn),
   ]);
   orgMetadata.set('ApexClass', apexClasses);
   orgMetadata.set('ApexComponent', apexComponents);
   orgMetadata.set('ApexPage', apexPages);
+  orgMetadata.set('ApexTrigger', apexTriggers);
   return orgMetadata;
 }
