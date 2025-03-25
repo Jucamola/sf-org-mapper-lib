@@ -8,7 +8,7 @@
 import * as fs from 'node:fs';
 import createGraph, { Graph } from 'ngraph.graph';
 import gexf from 'ngraph.gexf';
-import { OrgMetadata, OrgMetadataTypeNames } from '../types/SObjects';
+import { OrgMetadata, OrgMetadataTypeNames } from '../types/sObjects';
 
 export function writeGexf(
   cytoscapeCollection: cytoscape.CollectionReturnValue,

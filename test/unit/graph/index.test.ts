@@ -7,7 +7,7 @@
 
 import { expect } from 'chai';
 import { buildGraph } from '../../../src/graph/index';
-import { OrgMetadata, OrgMetadataMap, MetadataComponentDependency } from '../../../src/types/SObjects';
+import { OrgMetadata, OrgMetadataMap, MetadataComponentDependency } from '../../../src/types/sObjects';
 
 describe('buildGraph', () => {
   it('should create an empty graph when no metadata is provided', () => {

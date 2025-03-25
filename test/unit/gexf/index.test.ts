@@ -10,7 +10,7 @@ import { expect } from 'chai';
 import * as sinon from 'sinon';
 import cytoscape from 'cytoscape';
 import { writeGexf } from '../../../src/gexf';
-import { OrgMetadata } from '../../../src/types/SObjects';
+import { OrgMetadata } from '../../../src/types/sObjects';
 
 describe('gexf/index', () => {
   let writeFileSyncStub: sinon.SinonStub;

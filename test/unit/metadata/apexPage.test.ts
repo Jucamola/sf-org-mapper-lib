@@ -8,7 +8,7 @@
 import { Connection, SfError } from '@salesforce/core';
 import { expect } from 'chai';
 import { instantiateContext, MockTestOrgData, restoreContext, stubContext } from '@salesforce/core/lib/testSetup';
-import { OrgMetadataMap } from '../../../src/types/SObjects';
+import { OrgMetadataMap } from '../../../src/types/sObjects';
 import { queryApexPages } from '../../../src/metadata/apexPage';
 
 describe('apexPage', () => {

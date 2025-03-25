@@ -6,7 +6,7 @@
  */
 
 import { Connection } from '@salesforce/core';
-import { ManageableState, OrgMetadataMap, Status } from '../types/SObjects';
+import { ManageableState, OrgMetadataMap, Status } from '../types/sObjects';
 
 type SymbolTable = {
   tableDeclaration?: {

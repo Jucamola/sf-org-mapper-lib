@@ -6,7 +6,7 @@
  */
 
 import { Connection } from '@salesforce/core';
-import { OrgMetadata } from '../types/SObjects';
+import { OrgMetadata } from '../types/sObjects';
 import { queryApexClasses } from './apexClass';
 import { queryApexComponents } from './apexComponent';
 import { queryApexPages } from './apexPage';

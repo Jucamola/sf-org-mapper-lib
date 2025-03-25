@@ -6,7 +6,7 @@
  */
 
 import { Connection } from '@salesforce/core';
-import { ManageableState, OrgMetadataMap } from '../types/SObjects';
+import { ManageableState, OrgMetadataMap } from '../types/sObjects';
 
 export async function queryApexPages(conn: Connection): Promise<OrgMetadataMap> {
   const apexPages = await conn.tooling.query(

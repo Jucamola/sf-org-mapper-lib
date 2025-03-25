@@ -8,7 +8,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { parse } from 'csv-parse/sync';
-import { MetadataComponentDependency } from '../types/SObjects';
+import { MetadataComponentDependency } from '../types/sObjects';
 
 export function parseCSVFile(file: string): MetadataComponentDependency[] {
   const csvFilePath = path.resolve(file);

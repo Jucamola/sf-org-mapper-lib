@@ -2,7 +2,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { expect } from 'chai';
 import { parseCSVFile } from '../../../src/csv';
-import { MetadataComponentDependency } from '../../../src/types/SObjects';
+import { MetadataComponentDependency } from '../../../src/types/sObjects';
 
 describe('CSV Parser', () => {
   const testDataDir = path.join(__dirname, 'data');

@@ -7,7 +7,7 @@
 
 import cytoscape = require('cytoscape');
 import { Logger } from '@salesforce/core';
-import { ApexClass, MetadataComponentDependency, OrgMetadata } from '../types/SObjects';
+import { ApexClass, MetadataComponentDependency, OrgMetadata } from '../types/sObjects';
 
 let logger: Logger;
 const getLogger = (): Logger => {
