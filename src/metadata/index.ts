@@ -9,11 +9,17 @@ import { Connection } from '@salesforce/core';
 import { OrgMetadata } from '../types/SObjects';
 import { queryApexClasses } from './apexClass';
 import { queryApexComponents } from './apexComponent';
+import { queryApexPages } from './apexPage';
 
 export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   const orgMetadata = new Map();
-  const [apexClasses, apexComponents] = await Promise.all([queryApexClasses(conn), queryApexComponents(conn)]);
+  const [apexClasses, apexComponents, apexPages] = await Promise.all([
+    queryApexClasses(conn),
+    queryApexComponents(conn),
+    queryApexPages(conn),
+  ]);
   orgMetadata.set('ApexClass', apexClasses);
   orgMetadata.set('ApexComponent', apexComponents);
+  orgMetadata.set('ApexPage', apexPages);
   return orgMetadata;
 }

@@ -54,11 +54,15 @@ export type ApexComponent = Metadata & {
   Type: 'ApexComponent';
 };
 
+export type ApexPage = Metadata & {
+  Type: 'ApexPage';
+};
+
 type Id = string;
 
-export type OrgMetadataTypeNames = 'ApexClass' | 'ApexComponent' | 'Unknown';
+export type OrgMetadataTypeNames = 'ApexClass' | 'ApexComponent' | 'ApexPage' | 'Unknown';
 
-export type OrgMetadataTypes = ApexClass | ApexComponent;
+export type OrgMetadataTypes = ApexClass | ApexComponent | ApexPage;
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
 export type OrgMetadata = Map<OrgMetadataTypeNames, OrgMetadataMap>;
