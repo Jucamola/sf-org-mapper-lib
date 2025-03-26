@@ -99,6 +99,11 @@ export type FieldSet = UnversionedMetadata & {
   Type: 'FieldSet';
 };
 
+export type FlexiPage = UnversionedMetadata & {
+  DeveloperName: string;
+  Type: 'FlexiPage';
+};
+
 type Id = string;
 
 export type OrgMetadataTypeNames =
@@ -112,6 +117,7 @@ export type OrgMetadataTypeNames =
   | 'CustomTab'
   | 'EmailTemplate'
   | 'FieldSet'
+  | 'FlexiPage'
   | 'Unknown';
 
 export type OrgMetadataTypes =
@@ -124,7 +130,8 @@ export type OrgMetadataTypes =
   | CustomLabel
   | CustomTab
   | EmailTemplate
-  | FieldSet;
+  | FieldSet
+  | FlexiPage;
 
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
