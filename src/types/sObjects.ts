@@ -133,6 +133,11 @@ export type Flow = Metadata & {
   ProcessType: ProcessType;
 };
 
+export type HomePageComponent = UnversionedMetadata & {
+  Name: string;
+  Type: 'HomePageComponent';
+};
+
 type Id = string;
 
 export type OrgMetadataTypeNames =
@@ -148,6 +153,7 @@ export type OrgMetadataTypeNames =
   | 'FieldSet'
   | 'FlexiPage'
   | 'Flow'
+  | 'HomePageComponent'
   | 'Unknown';
 
 export type OrgMetadataTypes =
@@ -162,7 +168,8 @@ export type OrgMetadataTypes =
   | EmailTemplate
   | FieldSet
   | FlexiPage
-  | Flow;
+  | Flow
+  | HomePageComponent;
 
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
