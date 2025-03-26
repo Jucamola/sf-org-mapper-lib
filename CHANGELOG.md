@@ -1,3 +1,12 @@
+## [0.4.1](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.4.0...0.4.1) (2025-03-26)
+
+
+### Bug Fixes
+
+* fix malformated query ([a06e7c2](https://github.com/Jucamola/sf-org-mapper-lib/commit/a06e7c2a26d50c5942e0f75193f084dd58360c69))
+
+
+
 # [0.4.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.3.0...0.4.0) (2025-03-26)
 
 

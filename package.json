@@ -1,6 +1,6 @@
 {
   "name": "sf-org-mapper-lib",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Library for the sf-org-mapper plugin",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
