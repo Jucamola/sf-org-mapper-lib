@@ -10,7 +10,7 @@ import { ManageableState, OrgMetadataMap } from '../types/sObjects';
 
 export async function queryFieldSets(conn: Connection): Promise<OrgMetadataMap> {
   const fieldSets = await conn.tooling.query(
-    'SELECT Id, ManageableState, CreatedDate LastModifiedDate DeveloperName, NamespacePrefix FROM FieldSet',
+    'SELECT Id, ManageableState, CreatedDate, LastModifiedDate, DeveloperName, NamespacePrefix FROM FieldSet',
     {
       autoFetch: true,
     }
