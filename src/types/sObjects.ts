@@ -104,6 +104,35 @@ export type FlexiPage = UnversionedMetadata & {
   Type: 'FlexiPage';
 };
 
+export type ProcessType =
+  | 'Appointments'
+  | 'ApprovalWorkflow'
+  | 'AutoLaunchedFlow'
+  | 'CheckoutFlow'
+  | 'ContactRequestFlow'
+  | 'CustomerLifecycle'
+  | 'CustomEvent'
+  | 'FieldServiceMobile'
+  | 'FieldServiceWeb'
+  | 'Flow'
+  | 'FSCLending'
+  | 'IndicatorResultFlow'
+  | 'InvocableProcess'
+  | 'LoyaltyManagementFlow'
+  | 'PromptFlow'
+  | 'RoutingFlow'
+  | 'Survey'
+  | 'SurveyEnrich'
+  | 'Workflow';
+
+export type Flow = Metadata & {
+  DeveloperName: string;
+  Type: 'Flow';
+  VersionNumber: number;
+  Status: string;
+  ProcessType: ProcessType;
+};
+
 type Id = string;
 
 export type OrgMetadataTypeNames =
@@ -118,6 +147,7 @@ export type OrgMetadataTypeNames =
   | 'EmailTemplate'
   | 'FieldSet'
   | 'FlexiPage'
+  | 'Flow'
   | 'Unknown';
 
 export type OrgMetadataTypes =
@@ -131,7 +161,8 @@ export type OrgMetadataTypes =
   | CustomTab
   | EmailTemplate
   | FieldSet
-  | FlexiPage;
+  | FlexiPage
+  | Flow;
 
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 

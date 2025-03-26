@@ -18,6 +18,7 @@ import { queryCustomTabs } from './customTab';
 import { queryEmailTemplates } from './emailTemplate';
 import { queryFieldSets } from './fieldSet';
 import { queryFlexiPages } from './flexiPage';
+import { queryFlows } from './flow';
 
 export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   const orgMetadata = new Map();
@@ -33,6 +34,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     emailTemplates,
     fieldSets,
     flexiPages,
+    flows,
   ] = await Promise.all([
     queryApexClasses(conn),
     queryApexComponents(conn),
@@ -45,6 +47,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     queryEmailTemplates(conn),
     queryFieldSets(conn),
     queryFlexiPages(conn),
+    queryFlows(conn),
   ]);
   orgMetadata.set('ApexClass', apexClasses);
   orgMetadata.set('ApexComponent', apexComponents);
@@ -57,5 +60,6 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   orgMetadata.set('EmailTemplate', emailTemplates);
   orgMetadata.set('FieldSet', fieldSets);
   orgMetadata.set('FlexiPage', flexiPages);
+  orgMetadata.set('Flow', flows);
   return orgMetadata;
 }
