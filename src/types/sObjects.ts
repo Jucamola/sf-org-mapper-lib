@@ -89,6 +89,10 @@ export type CustomTab = UnversionedMetadata & {
   Type: 'CustomTab';
 };
 
+export type EmailTemplate = Metadata & {
+  Name: string;
+  Type: 'EmailTemplate';
+};
 type Id = string;
 
 export type OrgMetadataTypeNames =
@@ -100,6 +104,7 @@ export type OrgMetadataTypeNames =
   | 'AuraDefinitionBundle'
   | 'CustomLabel'
   | 'CustomTab'
+  | 'EmailTemplate'
   | 'Unknown';
 
 export type OrgMetadataTypes =
@@ -110,7 +115,8 @@ export type OrgMetadataTypes =
   | CustomApplication
   | AuraDefinitionBundle
   | CustomLabel
-  | CustomTab;
+  | CustomTab
+  | EmailTemplate;
 
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 

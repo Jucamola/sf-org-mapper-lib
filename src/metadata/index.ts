@@ -15,6 +15,7 @@ import { queryCustomApplications } from './customApplication';
 import { queryAuraDefinitionBundles } from './auraDefinitionBundle';
 import { queryCustomLabels } from './customLabel';
 import { queryCustomTabs } from './customTab';
+import { queryEmailTemplates } from './emailTemplate';
 
 export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   const orgMetadata = new Map();
@@ -27,6 +28,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     auraDefinitionBundles,
     customLabels,
     customTabs,
+    emailTemplates,
   ] = await Promise.all([
     queryApexClasses(conn),
     queryApexComponents(conn),
@@ -36,6 +38,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     queryAuraDefinitionBundles(conn),
     queryCustomLabels(conn),
     queryCustomTabs(conn),
+    queryEmailTemplates(conn),
   ]);
   orgMetadata.set('ApexClass', apexClasses);
   orgMetadata.set('ApexComponent', apexComponents);
@@ -45,5 +48,6 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   orgMetadata.set('AuraDefinitionBundle', auraDefinitionBundles);
   orgMetadata.set('CustomLabel', customLabels);
   orgMetadata.set('CustomTabs', customTabs);
+  orgMetadata.set('EmailTemplate', emailTemplates);
   return orgMetadata;
 }
