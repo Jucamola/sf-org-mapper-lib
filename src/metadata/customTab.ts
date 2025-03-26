@@ -10,7 +10,7 @@ import { ManageableState, OrgMetadataMap } from '../types/sObjects';
 
 export async function queryCustomTabs(conn: Connection): Promise<OrgMetadataMap> {
   const customTabs = await conn.tooling.query(
-    'SELECT Id, DeveloperName, ManageableState, NamespacePrefix, LastModifiedDate FROM CustomTab',
+    'SELECT Id, DeveloperName, ManageableState, NamespacePrefix, CreatedDate, LastModifiedDate FROM CustomTab',
     {
       autoFetch: true,
     }
@@ -25,6 +25,7 @@ export async function queryCustomTabs(conn: Connection): Promise<OrgMetadataMap>
         DeveloperName: record.DeveloperName as string,
         ManageableState: record.ManageableState as ManageableState,
         NamespacePrefix: record.NamespacePrefix as string,
+        CreatedDate: new Date(record.CreatedDate as string),
         LastModifiedDate: new Date(record.LastModifiedDate as string),
       },
     ])

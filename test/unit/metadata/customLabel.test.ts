@@ -35,6 +35,7 @@ describe('customLabel', () => {
           Id: '01p000000000001AAA',
           NamespacePrefix: 'ns1',
           Name: 'MyLabel1',
+          CreatedDate: '2023-01-02T00:00:00.000Z',
           LastModifiedDate: '2023-01-02T00:00:00.000Z',
           ManageableState: 'unmanaged',
         },
@@ -42,6 +43,7 @@ describe('customLabel', () => {
           Id: '01p000000000002AAA',
           NamespacePrefix: null,
           Name: 'MyLabel2',
+          CreatedDate: '2023-02-02T00:00:00.000Z',
           LastModifiedDate: '2023-02-02T00:00:00.000Z',
           ManageableState: 'installed',
         },
@@ -49,6 +51,7 @@ describe('customLabel', () => {
           Id: '01p000000000003AAA',
           NamespacePrefix: null,
           Name: 'MyLabel3',
+          CreatedDate: '2023-03-02T00:00:00.000Z',
           LastModifiedDate: '2023-03-02T00:00:00.000Z',
           ManageableState: 'released',
         },
@@ -70,6 +73,7 @@ describe('customLabel', () => {
       ManageableState: 'unmanaged',
       Name: 'MyLabel1',
       NamespacePrefix: 'ns1',
+      CreatedDate: new Date('2023-01-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-01-02T00:00:00.000Z'),
     });
 
@@ -80,6 +84,7 @@ describe('customLabel', () => {
       ManageableState: 'installed',
       Name: 'MyLabel2',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-02-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-02-02T00:00:00.000Z'),
     });
 
@@ -90,6 +95,7 @@ describe('customLabel', () => {
       ManageableState: 'released',
       Name: 'MyLabel3',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-03-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-03-02T00:00:00.000Z'),
     });
   });

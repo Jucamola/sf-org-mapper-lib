@@ -36,6 +36,7 @@ describe('apexPage', () => {
           NamespacePrefix: 'ns1',
           Name: 'MyPage1',
           ApiVersion: 55.0,
+          CreatedDate: '2023-01-02T00:00:00.000Z',
           LastModifiedDate: '2023-01-02T00:00:00.000Z',
           ManageableState: 'unmanaged',
         },
@@ -44,6 +45,7 @@ describe('apexPage', () => {
           NamespacePrefix: null,
           Name: 'MyPage2',
           ApiVersion: 56.0,
+          CreatedDate: '2023-02-02T00:00:00.000Z',
           LastModifiedDate: '2023-02-02T00:00:00.000Z',
           ManageableState: 'installed',
         },
@@ -52,6 +54,7 @@ describe('apexPage', () => {
           NamespacePrefix: null,
           Name: 'MyPage3',
           ApiVersion: 57.0,
+          CreatedDate: '2023-03-02T00:00:00.000Z',
           LastModifiedDate: '2023-03-02T00:00:00.000Z',
           ManageableState: 'released',
         },
@@ -74,6 +77,7 @@ describe('apexPage', () => {
       ManageableState: 'unmanaged',
       Name: 'MyPage1',
       NamespacePrefix: 'ns1',
+      CreatedDate: new Date('2023-01-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-01-02T00:00:00.000Z'),
     });
 
@@ -85,6 +89,7 @@ describe('apexPage', () => {
       ManageableState: 'installed',
       Name: 'MyPage2',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-02-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-02-02T00:00:00.000Z'),
     });
 
@@ -96,6 +101,7 @@ describe('apexPage', () => {
       ManageableState: 'released',
       Name: 'MyPage3',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-03-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-03-02T00:00:00.000Z'),
     });
   });

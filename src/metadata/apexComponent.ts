@@ -10,7 +10,7 @@ import { ManageableState, OrgMetadataMap } from '../types/sObjects';
 
 export async function queryApexComponents(conn: Connection): Promise<OrgMetadataMap> {
   const apexComponents = await conn.tooling.query(
-    `SELECT  Id, NamespacePrefix, Name, ApiVersion, LastModifiedDate, ManageableState
+    `SELECT  Id, NamespacePrefix, Name, ApiVersion, CreatedDate, LastModifiedDate, ManageableState
       FROM ApexComponent`,
     {
       autoFetch: true,
@@ -27,6 +27,7 @@ export async function queryApexComponents(conn: Connection): Promise<OrgMetadata
         ManageableState: record.ManageableState as ManageableState,
         Name: record.Name as string,
         NamespacePrefix: record.NamespacePrefix as string,
+        CreatedDate: new Date(record.CreatedDate as string),
         LastModifiedDate: new Date(record.LastModifiedDate as string),
       },
     ])

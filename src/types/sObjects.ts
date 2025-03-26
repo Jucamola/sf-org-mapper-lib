@@ -37,6 +37,7 @@ export type Status = 'Active' | 'Deleted' | 'Inactive';
 export type UnversionedMetadata = NodeData & {
   ManageableState: ManageableState;
   NamespacePrefix: string;
+  CreatedDate: Date;
   LastModifiedDate: Date;
 };
 

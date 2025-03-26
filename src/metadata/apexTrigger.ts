@@ -10,7 +10,7 @@ import { ManageableState, OrgMetadataMap, Status } from '../types/sObjects';
 
 export async function queryApexTriggers(conn: Connection): Promise<OrgMetadataMap> {
   const apexTriggers = await conn.tooling.query(
-    'SELECT Id, NamespacePrefix, Name, ApiVersion, Status, IsValid, LengthWithoutComments, LastModifiedDate, ManageableState FROM ApexTrigger',
+    'SELECT Id, NamespacePrefix, Name, ApiVersion, Status, IsValid, LengthWithoutComments, CreatedDate, LastModifiedDate, ManageableState FROM ApexTrigger',
     {
       autoFetch: true,
     }
@@ -26,6 +26,7 @@ export async function queryApexTriggers(conn: Connection): Promise<OrgMetadataMa
         ManageableState: record.ManageableState as ManageableState,
         Name: record.Name as string,
         NamespacePrefix: record.NamespacePrefix as string,
+        CreatedDate: new Date(record.CreatedDate as string),
         LastModifiedDate: new Date(record.LastModifiedDate as string),
         IsValid: record.IsValid as boolean,
         LengthWithoutComments: Number(record.LengthWithoutComments),

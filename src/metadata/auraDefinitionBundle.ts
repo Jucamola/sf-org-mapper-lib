@@ -10,7 +10,7 @@ import { ManageableState, OrgMetadataMap } from '../types/sObjects';
 
 export async function queryAuraDefinitionBundles(conn: Connection): Promise<OrgMetadataMap> {
   const auraDefinitionBundles = await conn.tooling.query(
-    'SELECT Id, DeveloperName, NamespacePrefix, ManageableState, LastModifiedDate, ApiVersion FROM AuraDefinitionBundle',
+    'SELECT Id, DeveloperName, NamespacePrefix, ManageableState, CreatedDate, LastModifiedDate, ApiVersion FROM AuraDefinitionBundle',
     {
       autoFetch: true,
     }
@@ -26,6 +26,7 @@ export async function queryAuraDefinitionBundles(conn: Connection): Promise<OrgM
         ManageableState: record.ManageableState as ManageableState,
         DeveloperName: record.DeveloperName as string,
         NamespacePrefix: record.NamespacePrefix as string,
+        CreatedDate: new Date(record.CreatedDate as string),
         LastModifiedDate: new Date(record.LastModifiedDate as string),
       },
     ])

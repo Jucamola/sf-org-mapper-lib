@@ -10,7 +10,7 @@ import { ManageableState, OrgMetadataMap } from '../types/sObjects';
 
 export async function queryCustomApplications(conn: Connection): Promise<OrgMetadataMap> {
   const customApplications = await conn.tooling.query(
-    'SELECT Id, Label, DeveloperName, NamespacePrefix, ManageableState,LastModifiedDate FROM CustomApplication',
+    'SELECT Id, Label, DeveloperName, NamespacePrefix, ManageableState, CreatedDate, LastModifiedDate FROM CustomApplication',
     {
       autoFetch: true,
     }
@@ -25,6 +25,7 @@ export async function queryCustomApplications(conn: Connection): Promise<OrgMeta
         ManageableState: record.ManageableState as ManageableState,
         DeveloperName: record.DeveloperName as string,
         NamespacePrefix: record.NamespacePrefix as string,
+        CreatedDate: new Date(record.CreatedDate as string),
         LastModifiedDate: new Date(record.LastModifiedDate as string),
       },
     ])

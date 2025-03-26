@@ -36,6 +36,7 @@ describe('apexComponent', () => {
           NamespacePrefix: 'ns1',
           Name: 'MyComponent1',
           ApiVersion: 55.0,
+          CreatedDate: '2023-01-01T00:00:00.000Z',
           LastModifiedDate: '2023-01-02T00:00:00.000Z',
           ManageableState: 'unmanaged',
         },
@@ -44,6 +45,7 @@ describe('apexComponent', () => {
           NamespacePrefix: null,
           Name: 'MyComponent2',
           ApiVersion: 56.0,
+          CreatedDate: '2023-01-01T00:00:00.000Z',
           LastModifiedDate: '2023-02-02T00:00:00.000Z',
           ManageableState: 'installed',
         },
@@ -52,6 +54,7 @@ describe('apexComponent', () => {
           NamespacePrefix: null,
           Name: 'MyComponent3',
           ApiVersion: 57.0,
+          CreatedDate: '2023-01-01T00:00:00.000Z',
           LastModifiedDate: '2023-03-02T00:00:00.000Z',
           ManageableState: 'released',
         },
@@ -74,6 +77,7 @@ describe('apexComponent', () => {
       ManageableState: 'unmanaged',
       Name: 'MyComponent1',
       NamespacePrefix: 'ns1',
+      CreatedDate: new Date('2023-01-01T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-01-02T00:00:00.000Z'),
     });
 
@@ -85,6 +89,7 @@ describe('apexComponent', () => {
       ManageableState: 'installed',
       Name: 'MyComponent2',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-01-01T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-02-02T00:00:00.000Z'),
     });
 
@@ -96,6 +101,7 @@ describe('apexComponent', () => {
       ManageableState: 'released',
       Name: 'MyComponent3',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-01-01T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-03-02T00:00:00.000Z'),
     });
   });

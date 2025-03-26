@@ -10,7 +10,7 @@ import { ManageableState, OrgMetadataMap } from '../types/sObjects';
 
 export async function queryCustomLabels(conn: Connection): Promise<OrgMetadataMap> {
   const customLabels = await conn.tooling.query(
-    'SELECT Id, Name, NamespacePrefix, ManageableState, LastModifiedDate FROM ExternalString',
+    'SELECT Id, Name, NamespacePrefix, ManageableState, CreatedDate, LastModifiedDate FROM ExternalString',
     {
       autoFetch: true,
     }
@@ -25,6 +25,7 @@ export async function queryCustomLabels(conn: Connection): Promise<OrgMetadataMa
         Name: record.Name as string,
         ManageableState: record.ManageableState as ManageableState,
         NamespacePrefix: record.NamespacePrefix as string,
+        CreatedDate: new Date(record.CreatedDate as string),
         LastModifiedDate: new Date(record.LastModifiedDate as string),
       },
     ])

@@ -36,6 +36,7 @@ describe('customApplication', () => {
           NamespacePrefix: 'ns1',
           DeveloperName: 'MyApp1',
           Label: 'My Application 1',
+          CreatedDate: '2023-01-02T00:00:00.000Z',
           LastModifiedDate: '2023-01-02T00:00:00.000Z',
           ManageableState: 'unmanaged',
         },
@@ -44,6 +45,7 @@ describe('customApplication', () => {
           NamespacePrefix: null,
           DeveloperName: 'MyApp2',
           Label: 'My Application 2',
+          CreatedDate: '2023-02-02T00:00:00.000Z',
           LastModifiedDate: '2023-02-02T00:00:00.000Z',
           ManageableState: 'installed',
         },
@@ -52,6 +54,7 @@ describe('customApplication', () => {
           NamespacePrefix: null,
           DeveloperName: 'MyApp3',
           Label: 'My Application 3',
+          CreatedDate: '2023-03-02T00:00:00.000Z',
           LastModifiedDate: '2023-03-02T00:00:00.000Z',
           ManageableState: 'released',
         },
@@ -73,6 +76,7 @@ describe('customApplication', () => {
       ManageableState: 'unmanaged',
       DeveloperName: 'MyApp1',
       NamespacePrefix: 'ns1',
+      CreatedDate: new Date('2023-01-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-01-02T00:00:00.000Z'),
     });
 
@@ -83,6 +87,7 @@ describe('customApplication', () => {
       ManageableState: 'installed',
       DeveloperName: 'MyApp2',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-02-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-02-02T00:00:00.000Z'),
     });
 
@@ -93,6 +98,7 @@ describe('customApplication', () => {
       ManageableState: 'released',
       DeveloperName: 'MyApp3',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-03-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-03-02T00:00:00.000Z'),
     });
   });

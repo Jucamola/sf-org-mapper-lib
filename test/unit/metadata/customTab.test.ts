@@ -35,6 +35,7 @@ describe('customTab', () => {
           Id: '01p000000000001AAA',
           NamespacePrefix: 'ns1',
           DeveloperName: 'MyTab1',
+          CreatedDate: '2023-01-02T00:00:00.000Z',
           LastModifiedDate: '2023-01-02T00:00:00.000Z',
           ManageableState: 'unmanaged',
         },
@@ -42,6 +43,7 @@ describe('customTab', () => {
           Id: '01p000000000002AAA',
           NamespacePrefix: null,
           DeveloperName: 'MyTab2',
+          CreatedDate: '2023-02-02T00:00:00.000Z',
           LastModifiedDate: '2023-02-02T00:00:00.000Z',
           ManageableState: 'installed',
         },
@@ -49,6 +51,7 @@ describe('customTab', () => {
           Id: '01p000000000003AAA',
           NamespacePrefix: null,
           DeveloperName: 'MyTab3',
+          CreatedDate: '2023-03-02T00:00:00.000Z',
           LastModifiedDate: '2023-03-02T00:00:00.000Z',
           ManageableState: 'released',
         },
@@ -70,6 +73,7 @@ describe('customTab', () => {
       ManageableState: 'unmanaged',
       DeveloperName: 'MyTab1',
       NamespacePrefix: 'ns1',
+      CreatedDate: new Date('2023-01-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-01-02T00:00:00.000Z'),
     });
 
@@ -80,6 +84,7 @@ describe('customTab', () => {
       ManageableState: 'installed',
       DeveloperName: 'MyTab2',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-02-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-02-02T00:00:00.000Z'),
     });
 
@@ -90,6 +95,7 @@ describe('customTab', () => {
       ManageableState: 'released',
       DeveloperName: 'MyTab3',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-03-02T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-03-02T00:00:00.000Z'),
     });
   });

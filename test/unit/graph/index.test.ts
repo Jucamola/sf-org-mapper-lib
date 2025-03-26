@@ -34,6 +34,7 @@ describe('buildGraph', () => {
       Name: 'MyClass1',
       Status: 'Active',
       NamespacePrefix: 'ns1',
+      CreatedDate: new Date(),
       LastModifiedDate: new Date(),
     });
     apexClassMap.set('01p000000000002AAA', {
@@ -47,6 +48,7 @@ describe('buildGraph', () => {
       Name: 'MyClass2',
       Status: 'Active',
       NamespacePrefix: '',
+      CreatedDate: new Date(),
       LastModifiedDate: new Date(),
     });
     orgMetadata.set('ApexClass', apexClassMap);
@@ -83,6 +85,7 @@ describe('buildGraph', () => {
       Name: 'MyClass1',
       Status: 'Active',
       NamespacePrefix: 'ns1',
+      CreatedDate: new Date(),
       LastModifiedDate: new Date(),
     });
     apexClassMap.set('01p000000000002AAA', {
@@ -96,6 +99,7 @@ describe('buildGraph', () => {
       Name: 'MyClass2',
       Status: 'Active',
       NamespacePrefix: '',
+      CreatedDate: new Date(),
       LastModifiedDate: new Date(),
     });
     orgMetadata.set('ApexClass', apexClassMap);

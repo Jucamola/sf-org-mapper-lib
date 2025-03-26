@@ -113,6 +113,7 @@ describe('apexClass', () => {
       Name: 'MyClass1',
       Status: 'Active',
       NamespacePrefix: 'ns1',
+      CreatedDate: new Date('2023-01-01T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-01-02T00:00:00.000Z'),
     });
 
@@ -128,6 +129,7 @@ describe('apexClass', () => {
       Name: 'MyClass2',
       Status: 'Active',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-02-01T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-02-02T00:00:00.000Z'),
     });
 
@@ -143,6 +145,7 @@ describe('apexClass', () => {
       Name: 'MyClass3',
       Status: 'Deleted',
       NamespacePrefix: null,
+      CreatedDate: new Date('2023-03-01T00:00:00.000Z'),
       LastModifiedDate: new Date('2023-03-02T00:00:00.000Z'),
     });
   });

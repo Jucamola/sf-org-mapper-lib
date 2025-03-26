@@ -16,7 +16,7 @@ type SymbolTable = {
 
 export async function queryApexClasses(conn: Connection): Promise<OrgMetadataMap> {
   const apexClasses = await conn.tooling.query(
-    `SELECT  Id, NamespacePrefix, Name, ApiVersion, Status, IsValid, LengthWithoutComments, LastModifiedDate, ManageableState, SymbolTable 
+    `SELECT  Id, NamespacePrefix, Name, ApiVersion, Status, IsValid, LengthWithoutComments, CreatedDate ,LastModifiedDate, ManageableState, SymbolTable 
       FROM ApexClass`,
     {
       autoFetch: true,
@@ -42,6 +42,7 @@ export async function queryApexClasses(conn: Connection): Promise<OrgMetadataMap
           Name: record.Name as string,
           Status: record.Status as Status,
           NamespacePrefix: record.NamespacePrefix as string,
+          CreatedDate: new Date(record.CreatedDate as string),
           LastModifiedDate: new Date(record.LastModifiedDate as string),
         },
       ];
