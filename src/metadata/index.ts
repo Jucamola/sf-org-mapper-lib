@@ -20,6 +20,7 @@ import { queryFieldSets } from './fieldSet';
 import { queryFlexiPages } from './flexiPage';
 import { queryFlows } from './flow';
 import { queryHomePageComponents } from './homePageComponent';
+import { queryLayouts } from './layout';
 
 export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   const orgMetadata = new Map();
@@ -37,6 +38,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     flexiPages,
     flows,
     homePageComponents,
+    layouts,
   ] = await Promise.all([
     queryApexClasses(conn),
     queryApexComponents(conn),
@@ -51,6 +53,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     queryFlexiPages(conn),
     queryFlows(conn),
     queryHomePageComponents(conn),
+    queryLayouts(conn),
   ]);
   orgMetadata.set('ApexClass', apexClasses);
   orgMetadata.set('ApexComponent', apexComponents);
@@ -65,5 +68,6 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   orgMetadata.set('FlexiPage', flexiPages);
   orgMetadata.set('Flow', flows);
   orgMetadata.set('HomePageComponent', homePageComponents);
+  orgMetadata.set('Layout', layouts);
   return orgMetadata;
 }

@@ -138,6 +138,11 @@ export type HomePageComponent = UnversionedMetadata & {
   Type: 'HomePageComponent';
 };
 
+export type Layout = UnversionedMetadata & {
+  Name: string;
+  Type: 'Layout';
+};
+
 type Id = string;
 
 export type OrgMetadataTypeNames =
@@ -154,6 +159,7 @@ export type OrgMetadataTypeNames =
   | 'FlexiPage'
   | 'Flow'
   | 'HomePageComponent'
+  | 'Layout'
   | 'Unknown';
 
 export type OrgMetadataTypes =
@@ -169,7 +175,8 @@ export type OrgMetadataTypes =
   | FieldSet
   | FlexiPage
   | Flow
-  | HomePageComponent;
+  | HomePageComponent
+  | Layout;
 
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
