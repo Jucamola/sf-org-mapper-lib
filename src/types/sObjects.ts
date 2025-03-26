@@ -83,6 +83,11 @@ export type CustomLabel = UnversionedMetadata & {
   Type: 'CustomLabel';
 };
 
+export type CustomTab = UnversionedMetadata & {
+  DeveloperName: string;
+  Type: 'CustomTab';
+};
+
 type Id = string;
 
 export type OrgMetadataTypeNames =
@@ -93,6 +98,7 @@ export type OrgMetadataTypeNames =
   | 'CustomApplication'
   | 'AuraDefinitionBundle'
   | 'CustomLabel'
+  | 'CustomTab'
   | 'Unknown';
 
 export type OrgMetadataTypes =
@@ -102,7 +108,9 @@ export type OrgMetadataTypes =
   | ApexTrigger
   | CustomApplication
   | AuraDefinitionBundle
-  | CustomLabel;
+  | CustomLabel
+  | CustomTab;
+
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
 export type OrgMetadata = Map<OrgMetadataTypeNames, OrgMetadataMap>;

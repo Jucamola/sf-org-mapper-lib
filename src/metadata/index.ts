@@ -14,6 +14,7 @@ import { queryApexTriggers } from './apexTrigger';
 import { queryCustomApplications } from './customApplication';
 import { queryAuraDefinitionBundles } from './auraDefinitionBundle';
 import { queryCustomLabels } from './customLabel';
+import { queryCustomTabs } from './customTab';
 
 export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   const orgMetadata = new Map();
@@ -25,6 +26,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     customApplications,
     auraDefinitionBundles,
     customLabels,
+    customTabs,
   ] = await Promise.all([
     queryApexClasses(conn),
     queryApexComponents(conn),
@@ -33,6 +35,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     queryCustomApplications(conn),
     queryAuraDefinitionBundles(conn),
     queryCustomLabels(conn),
+    queryCustomTabs(conn),
   ]);
   orgMetadata.set('ApexClass', apexClasses);
   orgMetadata.set('ApexComponent', apexComponents);
@@ -40,6 +43,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   orgMetadata.set('ApexTrigger', apexTriggers);
   orgMetadata.set('CustomApplication', customApplications);
   orgMetadata.set('AuraDefinitionBundle', auraDefinitionBundles);
-  orgMetadata.set('CustomLabels', customLabels);
+  orgMetadata.set('CustomLabel', customLabels);
+  orgMetadata.set('CustomTabs', customTabs);
   return orgMetadata;
 }

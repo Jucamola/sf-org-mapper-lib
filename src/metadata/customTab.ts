@@ -1,0 +1,32 @@
+/*
+ * Copyright (c) 2025, Juan Carlos Montero Lamata.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license.
+ * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+
+import { Connection } from '@salesforce/core';
+import { ManageableState, OrgMetadataMap } from '../types/sObjects';
+
+export async function queryCustomTabs(conn: Connection): Promise<OrgMetadataMap> {
+  const customTabs = await conn.tooling.query(
+    'SELECT Id, DeveloperName, ManageableState, NamespacePrefix, LastModifiedDate FROM CustomTab',
+    {
+      autoFetch: true,
+    }
+  );
+
+  return new Map(
+    customTabs.records.map((record) => [
+      record.Id as string,
+      {
+        Label: record.DeveloperName as string,
+        Type: 'CustomTab',
+        DeveloperName: record.DeveloperName as string,
+        ManageableState: record.ManageableState as ManageableState,
+        NamespacePrefix: record.NamespacePrefix as string,
+        LastModifiedDate: new Date(record.LastModifiedDate as string),
+      },
+    ])
+  );
+}
