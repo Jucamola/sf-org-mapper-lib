@@ -70,7 +70,6 @@ describe('customApplication', () => {
     expect(app1).to.deep.equal({
       Label: 'MyApp1',
       Type: 'CustomApplication',
-      ApiVersion: NaN,
       ManageableState: 'unmanaged',
       DeveloperName: 'MyApp1',
       NamespacePrefix: 'ns1',
@@ -81,7 +80,6 @@ describe('customApplication', () => {
     expect(app2).to.deep.equal({
       Label: 'MyApp2',
       Type: 'CustomApplication',
-      ApiVersion: NaN,
       ManageableState: 'installed',
       DeveloperName: 'MyApp2',
       NamespacePrefix: null,
@@ -92,7 +90,6 @@ describe('customApplication', () => {
     expect(app3).to.deep.equal({
       Label: 'MyApp3',
       Type: 'CustomApplication',
-      ApiVersion: NaN,
       ManageableState: 'released',
       DeveloperName: 'MyApp3',
       NamespacePrefix: null,

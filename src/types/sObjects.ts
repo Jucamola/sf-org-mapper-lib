@@ -68,7 +68,7 @@ export type ApexPage = Metadata & {
   Type: 'ApexPage';
 };
 
-export type CustomApplication = Metadata & {
+export type CustomApplication = UnversionedMetadata & {
   DeveloperName: string;
   Type: 'CustomApplication';
 };

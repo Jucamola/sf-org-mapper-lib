@@ -22,7 +22,6 @@ export async function queryCustomApplications(conn: Connection): Promise<OrgMeta
       {
         Label: record.DeveloperName as string,
         Type: 'CustomApplication',
-        ApiVersion: Number(record.ApiVersion),
         ManageableState: record.ManageableState as ManageableState,
         DeveloperName: record.DeveloperName as string,
         NamespacePrefix: record.NamespacePrefix as string,
