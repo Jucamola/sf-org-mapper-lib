@@ -12,20 +12,24 @@ import { queryApexComponents } from './apexComponent';
 import { queryApexPages } from './apexPage';
 import { queryApexTriggers } from './apexTrigger';
 import { queryCustomApplications } from './customApplication';
+import { queryAuraDefinitionBundles } from './auraDefinitionBundle';
 
 export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   const orgMetadata = new Map();
-  const [apexClasses, apexComponents, apexPages, apexTriggers, customApplications] = await Promise.all([
-    queryApexClasses(conn),
-    queryApexComponents(conn),
-    queryApexPages(conn),
-    queryApexTriggers(conn),
-    queryCustomApplications(conn),
-  ]);
+  const [apexClasses, apexComponents, apexPages, apexTriggers, customApplications, auraDefinitionBundles] =
+    await Promise.all([
+      queryApexClasses(conn),
+      queryApexComponents(conn),
+      queryApexPages(conn),
+      queryApexTriggers(conn),
+      queryCustomApplications(conn),
+      queryAuraDefinitionBundles(conn),
+    ]);
   orgMetadata.set('ApexClass', apexClasses);
   orgMetadata.set('ApexComponent', apexComponents);
   orgMetadata.set('ApexPage', apexPages);
   orgMetadata.set('ApexTrigger', apexTriggers);
   orgMetadata.set('CustomApplication', customApplications);
+  orgMetadata.set('AuraDefinitionBundle', auraDefinitionBundles);
   return orgMetadata;
 }

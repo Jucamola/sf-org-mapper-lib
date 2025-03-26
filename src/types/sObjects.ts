@@ -70,6 +70,11 @@ export type CustomApplication = Metadata & {
   Type: 'CustomApplication';
 };
 
+export type AuraDefinitionBundle = Metadata & {
+  DeveloperName: string;
+  Type: 'AuraDefinitionBundle';
+};
+
 type Id = string;
 
 export type OrgMetadataTypeNames =
@@ -78,9 +83,16 @@ export type OrgMetadataTypeNames =
   | 'ApexPage'
   | 'ApexTrigger'
   | 'CustomApplication'
+  | 'AuraDefinitionBundle'
   | 'Unknown';
 
-export type OrgMetadataTypes = ApexClass | ApexComponent | ApexPage | ApexTrigger | CustomApplication;
+export type OrgMetadataTypes =
+  | ApexClass
+  | ApexComponent
+  | ApexPage
+  | ApexTrigger
+  | CustomApplication
+  | AuraDefinitionBundle;
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
 export type OrgMetadata = Map<OrgMetadataTypeNames, OrgMetadataMap>;
