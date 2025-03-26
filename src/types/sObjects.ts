@@ -93,6 +93,12 @@ export type EmailTemplate = Metadata & {
   Name: string;
   Type: 'EmailTemplate';
 };
+
+export type FieldSet = UnversionedMetadata & {
+  DeveloperName: string;
+  Type: 'FieldSet';
+};
+
 type Id = string;
 
 export type OrgMetadataTypeNames =
@@ -105,6 +111,7 @@ export type OrgMetadataTypeNames =
   | 'CustomLabel'
   | 'CustomTab'
   | 'EmailTemplate'
+  | 'FieldSet'
   | 'Unknown';
 
 export type OrgMetadataTypes =
@@ -116,7 +123,8 @@ export type OrgMetadataTypes =
   | AuraDefinitionBundle
   | CustomLabel
   | CustomTab
-  | EmailTemplate;
+  | EmailTemplate
+  | FieldSet;
 
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
