@@ -1,3 +1,26 @@
+# [0.4.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.3.0...0.4.0) (2025-03-26)
+
+
+### Bug Fixes
+
+* remove apiversion from customApplication ([db259dc](https://github.com/Jucamola/sf-org-mapper-lib/commit/db259dcb081d4a318ab77dcaa419a581212d6216))
+
+
+### Features
+
+* add AuraDefinitionBundle ([a2488ce](https://github.com/Jucamola/sf-org-mapper-lib/commit/a2488ce156d8b44e982356d944810fa2cf897d95))
+* add CreatedDate ([4f537be](https://github.com/Jucamola/sf-org-mapper-lib/commit/4f537bee290edd00ee276c625314ada55be19dd1))
+* add CustomLabel ([24b0688](https://github.com/Jucamola/sf-org-mapper-lib/commit/24b0688bca6b62809df77f5fa1496a01f291a0ad))
+* add CustomTab ([c9a5bc9](https://github.com/Jucamola/sf-org-mapper-lib/commit/c9a5bc905f12e1f87e8908e067033fb79fe13b07))
+* add EmailTemplate ([16c8481](https://github.com/Jucamola/sf-org-mapper-lib/commit/16c84814c7ee8fcd7f4c3b69d184937330d904d5))
+* add FieldSet ([93f1edb](https://github.com/Jucamola/sf-org-mapper-lib/commit/93f1edbca79d43a86de2c3f94cd56d25d1645ef6))
+* add FlexiPage ([c71238f](https://github.com/Jucamola/sf-org-mapper-lib/commit/c71238f8223c2df3b2448910484de6f8b6d614a3))
+* add Flow ([dbfd380](https://github.com/Jucamola/sf-org-mapper-lib/commit/dbfd380c491628cdbfaffd6a439a232255a29387))
+* add HomePageComponent ([a14c466](https://github.com/Jucamola/sf-org-mapper-lib/commit/a14c466f4c3bb8734cc8dccc0c4182f427015e8d))
+* add Layout ([cea8153](https://github.com/Jucamola/sf-org-mapper-lib/commit/cea8153aad8fea9d34dbec523f4cd80e19dd44ad))
+
+
+
 # [0.3.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.2.0...0.3.0) (2025-03-25)
 
 
