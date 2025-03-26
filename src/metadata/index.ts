@@ -13,23 +13,33 @@ import { queryApexPages } from './apexPage';
 import { queryApexTriggers } from './apexTrigger';
 import { queryCustomApplications } from './customApplication';
 import { queryAuraDefinitionBundles } from './auraDefinitionBundle';
+import { queryCustomLabels } from './customLabel';
 
 export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   const orgMetadata = new Map();
-  const [apexClasses, apexComponents, apexPages, apexTriggers, customApplications, auraDefinitionBundles] =
-    await Promise.all([
-      queryApexClasses(conn),
-      queryApexComponents(conn),
-      queryApexPages(conn),
-      queryApexTriggers(conn),
-      queryCustomApplications(conn),
-      queryAuraDefinitionBundles(conn),
-    ]);
+  const [
+    apexClasses,
+    apexComponents,
+    apexPages,
+    apexTriggers,
+    customApplications,
+    auraDefinitionBundles,
+    customLabels,
+  ] = await Promise.all([
+    queryApexClasses(conn),
+    queryApexComponents(conn),
+    queryApexPages(conn),
+    queryApexTriggers(conn),
+    queryCustomApplications(conn),
+    queryAuraDefinitionBundles(conn),
+    queryCustomLabels(conn),
+  ]);
   orgMetadata.set('ApexClass', apexClasses);
   orgMetadata.set('ApexComponent', apexComponents);
   orgMetadata.set('ApexPage', apexPages);
   orgMetadata.set('ApexTrigger', apexTriggers);
   orgMetadata.set('CustomApplication', customApplications);
   orgMetadata.set('AuraDefinitionBundle', auraDefinitionBundles);
+  orgMetadata.set('CustomLabels', customLabels);
   return orgMetadata;
 }

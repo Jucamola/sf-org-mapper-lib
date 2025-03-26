@@ -34,11 +34,14 @@ export type ManageableState =
 
 export type Status = 'Active' | 'Deleted' | 'Inactive';
 
-export type Metadata = NodeData & {
-  ApiVersion: number;
+export type UnversionedMetadata = NodeData & {
   ManageableState: ManageableState;
   NamespacePrefix: string;
   LastModifiedDate: Date;
+};
+
+export type Metadata = UnversionedMetadata & {
+  ApiVersion: number;
 };
 
 type ApexCode = Metadata & {
@@ -75,6 +78,11 @@ export type AuraDefinitionBundle = Metadata & {
   Type: 'AuraDefinitionBundle';
 };
 
+export type CustomLabel = UnversionedMetadata & {
+  Name: string;
+  Type: 'CustomLabel';
+};
+
 type Id = string;
 
 export type OrgMetadataTypeNames =
@@ -84,6 +92,7 @@ export type OrgMetadataTypeNames =
   | 'ApexTrigger'
   | 'CustomApplication'
   | 'AuraDefinitionBundle'
+  | 'CustomLabel'
   | 'Unknown';
 
 export type OrgMetadataTypes =
@@ -92,7 +101,8 @@ export type OrgMetadataTypes =
   | ApexPage
   | ApexTrigger
   | CustomApplication
-  | AuraDefinitionBundle;
+  | AuraDefinitionBundle
+  | CustomLabel;
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
 export type OrgMetadata = Map<OrgMetadataTypeNames, OrgMetadataMap>;
