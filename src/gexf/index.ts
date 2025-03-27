@@ -8,7 +8,7 @@
 import * as fs from 'node:fs';
 import createGraph, { Graph } from 'ngraph.graph';
 import gexf from 'ngraph.gexf';
-import { OrgMetadata, OrgMetadataTypeNames } from '../types/sObjects';
+import { OrgMetadata, OrgMetadataTypeNames, OrgMetadataTypes } from '../types/sObjects';
 
 export function writeGexf(
   cytoscapeCollection: cytoscape.CollectionReturnValue,
@@ -27,9 +27,9 @@ function buildGraph(cytoscapeCollection: cytoscape.CollectionReturnValue, orgMet
     const nodeId = cyNode.id();
     const type = cyNode.attr('Type') as OrgMetadataTypeNames;
     const nodeMetadata = orgMetadata.get(type)?.get(nodeId) ?? { Label: nodeId, Type: type };
-    const { Label, ...nodeAttributes } = nodeMetadata;
+    const { Label, ...nodeAttributes } = cleanNode(nodeMetadata as OrgMetadataTypes);
     ngraphGraph.addNode(nodeId, {
-      label: Label,
+      label: cleanGexf(Label),
       ...nodeAttributes,
     });
   });
@@ -41,4 +41,23 @@ function buildGraph(cytoscapeCollection: cytoscape.CollectionReturnValue, orgMet
   });
 
   return ngraphGraph;
+}
+
+function cleanNode(nodeMetadata: OrgMetadataTypes): OrgMetadataTypes {
+  const cleanNodeMetadata = Object.keys(nodeMetadata).map((key) => {
+    if (typeof nodeMetadata[key as keyof OrgMetadataTypes] === 'string') {
+      return [key as keyof OrgMetadataTypes, cleanGexf(nodeMetadata[key as keyof OrgMetadataTypes] as string)];
+    }
+    return [key as keyof OrgMetadataTypes, nodeMetadata[key as keyof OrgMetadataTypes]];
+  });
+  return Object.fromEntries(cleanNodeMetadata) as OrgMetadataTypes;
+}
+
+function cleanGexf(gexfString: string): string {
+  let cleanedString = gexfString.replace(/&/g, '&amp;');
+  cleanedString = cleanedString.replace(/</g, '&lt;');
+  cleanedString = cleanedString.replace(/>/g, '&gt;');
+  cleanedString = cleanedString.replace(/"/g, '&quot;');
+  cleanedString = cleanedString.replace(/'/g, '&apos;');
+  return cleanedString;
 }
