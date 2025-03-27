@@ -79,6 +79,13 @@ export type AuraDefinitionBundle = Metadata & {
   Type: 'AuraDefinitionBundle';
 };
 
+export type LightningComponentBundle = Metadata & {
+  DeveloperName: string;
+  Type: 'LightningComponentBundle';
+  IsExposed: boolean;
+  TargetConfigs: string;
+};
+
 export type CustomLabel = UnversionedMetadata & {
   Name: string;
   Type: 'CustomLabel';
@@ -160,6 +167,7 @@ export type OrgMetadataTypeNames =
   | 'Flow'
   | 'HomePageComponent'
   | 'Layout'
+  | 'LightningComponentBundle'
   | 'Unknown';
 
 export type OrgMetadataTypes =
@@ -176,7 +184,8 @@ export type OrgMetadataTypes =
   | FlexiPage
   | Flow
   | HomePageComponent
-  | Layout;
+  | Layout
+  | LightningComponentBundle;
 
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
