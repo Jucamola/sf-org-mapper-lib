@@ -22,6 +22,7 @@ import { queryFlows } from './flow';
 import { queryHomePageComponents } from './homePageComponent';
 import { queryLayouts } from './layout';
 import { queryLightningComponentBundles } from './lightningComponentBundle';
+import { queryCustomFields } from './customField';
 
 export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   const orgMetadata = new Map();
@@ -41,6 +42,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     homePageComponents,
     layouts,
     lightningComponentBundles,
+    customFields,
   ] = await Promise.all([
     queryApexClasses(conn),
     queryApexComponents(conn),
@@ -57,6 +59,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     queryHomePageComponents(conn),
     queryLayouts(conn),
     queryLightningComponentBundles(conn),
+    queryCustomFields(conn),
   ]);
   orgMetadata.set('ApexClass', apexClasses);
   orgMetadata.set('ApexComponent', apexComponents);
@@ -73,5 +76,6 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   orgMetadata.set('HomePageComponent', homePageComponents);
   orgMetadata.set('Layout', layouts);
   orgMetadata.set('LightningComponentBundle', lightningComponentBundles);
+  orgMetadata.set('CustomField', customFields);
   return orgMetadata;
 }

@@ -111,6 +111,12 @@ export type FlexiPage = UnversionedMetadata & {
   Type: 'FlexiPage';
 };
 
+export type CustomField = UnversionedMetadata & {
+  DeveloperName: string;
+  Type: 'CustomField';
+  TableEnumOrId: string;
+};
+
 export type ProcessType =
   | 'Appointments'
   | 'ApprovalWorkflow'
@@ -168,6 +174,7 @@ export type OrgMetadataTypeNames =
   | 'HomePageComponent'
   | 'Layout'
   | 'LightningComponentBundle'
+  | 'CustomField'
   | 'Unknown';
 
 export type OrgMetadataTypes =
@@ -185,7 +192,8 @@ export type OrgMetadataTypes =
   | Flow
   | HomePageComponent
   | Layout
-  | LightningComponentBundle;
+  | LightningComponentBundle
+  | CustomField;
 
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
