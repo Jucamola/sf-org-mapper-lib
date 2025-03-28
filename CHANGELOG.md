@@ -1,3 +1,17 @@
+# [0.5.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.4.1...0.5.0) (2025-03-28)
+
+
+### Bug Fixes
+
+* replace xml invalid characters ([19a450b](https://github.com/Jucamola/sf-org-mapper-lib/commit/19a450b63a0cfbb57a83f63738d17425cb27d76b))
+
+
+### Features
+
+* add LightningComponentBundle ([db4207a](https://github.com/Jucamola/sf-org-mapper-lib/commit/db4207aed29f43b5971e5efee6326dc6d83f745f))
+
+
+
 ## [0.4.1](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.4.0...0.4.1) (2025-03-26)
 
 
