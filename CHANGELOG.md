@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.5.0...0.6.0) (2025-03-28)
+
+
+### Features
+
+* add CustomField ([bbaa198](https://github.com/Jucamola/sf-org-mapper-lib/commit/bbaa198dc70515a9a688aa280c7e8f346a80357f))
+
+
+
 # [0.5.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.4.1...0.5.0) (2025-03-28)
 
 
