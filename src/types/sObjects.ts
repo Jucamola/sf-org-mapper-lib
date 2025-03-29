@@ -117,6 +117,12 @@ export type CustomField = UnversionedMetadata & {
   TableEnumOrId: string;
 };
 
+export type StandardEntity = UnversionedMetadata & {
+  QualifiedApiName: string;
+  Type: 'StandardEntity';
+  DurableId: string;
+};
+
 export type ProcessType =
   | 'Appointments'
   | 'ApprovalWorkflow'
@@ -180,7 +186,8 @@ export type OrgMetadataTypes =
   | Layout
   | LightningComponentBundle
   | CustomObject
-  | CustomField;
+  | CustomField
+  | StandardEntity;
 
 export type OrgMetadataTypeNames =
   | 'ApexClass'
@@ -199,7 +206,8 @@ export type OrgMetadataTypeNames =
   | 'Layout'
   | 'LightningComponentBundle'
   | 'CustomObject'
-  | 'CustomField';
+  | 'CustomField'
+  | 'StandardEntity';
 
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 

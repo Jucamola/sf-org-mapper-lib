@@ -24,6 +24,7 @@ import { queryLayouts } from './layout';
 import { queryLightningComponentBundles } from './lightningComponentBundle';
 import { queryCustomFields } from './customField';
 import { queryCustomObjects } from './customObject';
+import { queryStandardEntities } from './standardEntity';
 
 export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   const orgMetadata = new Map();
@@ -45,6 +46,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     lightningComponentBundles,
     customFields,
     customObjects,
+    standardEntities,
   ] = await Promise.all([
     queryApexClasses(conn),
     queryApexComponents(conn),
@@ -63,6 +65,7 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
     queryLightningComponentBundles(conn),
     queryCustomFields(conn),
     queryCustomObjects(conn),
+    queryStandardEntities(conn),
   ]);
   orgMetadata.set('ApexClass', apexClasses);
   orgMetadata.set('ApexComponent', apexComponents);
@@ -81,5 +84,6 @@ export async function queryMetadatas(conn: Connection): Promise<OrgMetadata> {
   orgMetadata.set('LightningComponentBundle', lightningComponentBundles);
   orgMetadata.set('CustomField', customFields);
   orgMetadata.set('CustomObject', customObjects);
+  orgMetadata.set('StandardEntity', standardEntities);
   return orgMetadata;
 }
