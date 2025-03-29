@@ -34,9 +34,9 @@
     "messages"
   ],
   "dependencies": {
-    "@salesforce/core": "^6.7.6",
-    "@salesforce/kit": "^3.0.15",
-    "@salesforce/ts-types": "^2.0.9",
+    "@salesforce/core": "^8.8.7",
+    "@salesforce/kit": "^3.1.6",
+    "@salesforce/ts-types": "^2.0.12",
     "@types/node": "^22.13.14",
     "csv-parse": "^5.6.0",
     "cytoscape": "^3.31.1",
@@ -45,8 +45,8 @@
   },
   "devDependencies": {
     "@salesforce/cli-plugins-testkit": "^5.3.39",
-    "@salesforce/dev-scripts": "^8.4.2",
-    "eslint-plugin-sf-plugin": "^1.20.17",
+    "@salesforce/dev-scripts": "^10.2.12",
+    "eslint-plugin-sf-plugin": "^1.20.18",
     "ts-node": "^10.9.2",
     "ts-patch": "^3.3.0",
     "typescript": "^5.8.2"
@@ -127,7 +127,7 @@
       "output": []
     },
     "link-check": {
-      "command": "node -e \"process.exit(process.env.CI ? 0 : 1)\" || linkinator \"**/*.md\" --skip \"CHANGELOG.md|node_modules|test/|confluence.internal.salesforce.com|my.salesforce.com|%s\" --markdown --retry --directory-listing --verbosity error",
+      "command": "node -e \"process.exit(process.env.CI ? 0 : 1)\" || linkinator \"**/*.md\" --skip \"CHANGELOG.md|node_modules|test/|confluence.internal.salesforce.com|my.salesforce.com|localhost|%s\" --markdown --retry --directory-listing --verbosity error",
       "files": [
         "./*.md",
         "./!(CHANGELOG).md",

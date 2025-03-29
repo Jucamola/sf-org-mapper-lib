@@ -7,7 +7,7 @@
 
 import { Connection, SfError } from '@salesforce/core';
 import { expect } from 'chai';
-import { instantiateContext, MockTestOrgData, restoreContext, stubContext } from '@salesforce/core/lib/testSetup';
+import { instantiateContext, MockTestOrgData, restoreContext, stubContext } from '@salesforce/core/testSetup';
 import { OrgMetadataMap } from '../../../src/types/sObjects';
 import { queryAuraDefinitionBundles } from '../../../src/metadata/auraDefinitionBundle';
 
