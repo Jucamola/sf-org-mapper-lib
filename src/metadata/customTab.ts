@@ -10,24 +10,32 @@ import { ManageableState, OrgMetadataMap } from '../types/sObjects';
 
 export async function queryCustomTabs(conn: Connection): Promise<OrgMetadataMap> {
   const customTabs = await conn.tooling.query(
-    'SELECT Id, DeveloperName, ManageableState, NamespacePrefix, CreatedDate, LastModifiedDate FROM CustomTab',
+    'SELECT Id, DeveloperName, Type, ManageableState, NamespacePrefix, CreatedDate, LastModifiedDate FROM CustomTab',
     {
       autoFetch: true,
     }
   );
 
+  const metadatas = await conn.metadata.list([{ type: 'CustomTab', folder: null }]);
+
   return new Map(
-    customTabs.records.map((record) => [
-      record.Id as string,
-      {
-        Label: record.DeveloperName as string,
-        Type: 'CustomTab',
-        DeveloperName: record.DeveloperName as string,
-        ManageableState: record.ManageableState as ManageableState,
-        NamespacePrefix: record.NamespacePrefix as string,
-        CreatedDate: new Date(record.CreatedDate as string),
-        LastModifiedDate: new Date(record.LastModifiedDate as string),
-      },
-    ])
+    customTabs.records.map((record) => {
+      let developerName = record.DeveloperName as string;
+      if (record.Type === 'customObject') {
+        developerName = metadatas.find((metadata) => metadata.id === record.Id)?.fullName ?? (record.Id as string);
+      }
+      return [
+        record.Id as string,
+        {
+          Label: developerName,
+          Type: 'CustomTab',
+          DeveloperName: developerName,
+          ManageableState: record.ManageableState as ManageableState,
+          NamespacePrefix: record.NamespacePrefix as string,
+          CreatedDate: new Date(record.CreatedDate as string),
+          LastModifiedDate: new Date(record.LastModifiedDate as string),
+        },
+      ];
+    })
   );
 }
