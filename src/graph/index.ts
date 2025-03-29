@@ -7,7 +7,7 @@
 
 import cytoscape = require('cytoscape');
 import { Logger } from '@salesforce/core';
-import { ApexClass, MetadataComponentDependency, OrgMetadata } from '../types/sObjects';
+import { ApexClass, ManageableState, MetadataComponentDependency, OrgMetadata } from '../types/sObjects';
 
 let logger: Logger;
 const getLogger = (): Logger => {
@@ -19,12 +19,38 @@ const getLogger = (): Logger => {
 
 export function buildGraph(
   orgMetadata: OrgMetadata,
-  metadataComponentDependencies: MetadataComponentDependency[]
+  metadataComponentDependencies: MetadataComponentDependency[],
+  options?: {
+    manageableStates?: { include?: ManageableState[]; exclude?: ManageableState[] };
+    namespacePrefixes?: { include?: string[]; exclude?: string[] };
+  }
 ): cytoscape.Core {
+  const manageableStatesToInclude = options?.manageableStates?.include;
+  const manageableStatesToExclude = options?.manageableStates?.exclude;
+
+  const namespacePrefixesToInclude = options?.namespacePrefixes?.include;
+  const namespacePrefixesToExclude = options?.namespacePrefixes?.exclude;
+
   const graph = cytoscape();
 
   for (const orgMetadataMap of orgMetadata.values()) {
     for (const [id, nodeData] of orgMetadataMap.entries()) {
+      if (manageableStatesToInclude && !manageableStatesToInclude.includes(nodeData.ManageableState)) {
+        continue;
+      }
+
+      if (manageableStatesToExclude && manageableStatesToExclude.includes(nodeData.ManageableState)) {
+        continue;
+      }
+
+      if (namespacePrefixesToInclude && !namespacePrefixesToInclude.includes(nodeData.NamespacePrefix)) {
+        continue;
+      }
+
+      if (namespacePrefixesToExclude && namespacePrefixesToExclude.includes(nodeData.NamespacePrefix)) {
+        continue;
+      }
+
       graph.add({
         group: 'nodes',
         data: {
