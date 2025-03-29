@@ -156,26 +156,12 @@ export type Layout = UnversionedMetadata & {
   Type: 'Layout';
 };
 
-type Id = string;
+export type CustomObject = UnversionedMetadata & {
+  DeveloperName: string;
+  Type: 'CustomObject';
+};
 
-export type OrgMetadataTypeNames =
-  | 'ApexClass'
-  | 'ApexComponent'
-  | 'ApexPage'
-  | 'ApexTrigger'
-  | 'CustomApplication'
-  | 'AuraDefinitionBundle'
-  | 'CustomLabel'
-  | 'CustomTab'
-  | 'EmailTemplate'
-  | 'FieldSet'
-  | 'FlexiPage'
-  | 'Flow'
-  | 'HomePageComponent'
-  | 'Layout'
-  | 'LightningComponentBundle'
-  | 'CustomField'
-  | 'Unknown';
+type Id = string;
 
 export type OrgMetadataTypes =
   | ApexClass
@@ -193,7 +179,27 @@ export type OrgMetadataTypes =
   | HomePageComponent
   | Layout
   | LightningComponentBundle
+  | CustomObject
   | CustomField;
+
+export type OrgMetadataTypeNames =
+  | 'ApexClass'
+  | 'ApexComponent'
+  | 'ApexPage'
+  | 'ApexTrigger'
+  | 'CustomApplication'
+  | 'AuraDefinitionBundle'
+  | 'CustomLabel'
+  | 'CustomTab'
+  | 'EmailTemplate'
+  | 'FieldSet'
+  | 'FlexiPage'
+  | 'Flow'
+  | 'HomePageComponent'
+  | 'Layout'
+  | 'LightningComponentBundle'
+  | 'CustomObject'
+  | 'CustomField';
 
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
