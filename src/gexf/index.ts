@@ -27,7 +27,7 @@ function buildGraph(cytoscapeCollection: cytoscape.CollectionReturnValue, orgMet
     const nodeId = cyNode.id();
     const type = cyNode.attr('Type') as OrgMetadataTypeNames;
     const nodeMetadata = orgMetadata.get(type)?.get(nodeId) ?? { Label: nodeId, Type: type };
-    const { Label, ...nodeAttributes } = cleanNode(nodeMetadata as OrgMetadataTypes);
+    const { Label, ...nodeAttributes } = convertFormats(nodeMetadata as OrgMetadataTypes);
     ngraphGraph.addNode(nodeId, {
       label: cleanGexf(Label),
       ...nodeAttributes,
@@ -43,10 +43,13 @@ function buildGraph(cytoscapeCollection: cytoscape.CollectionReturnValue, orgMet
   return ngraphGraph;
 }
 
-function cleanNode(nodeMetadata: OrgMetadataTypes): OrgMetadataTypes {
+function convertFormats(nodeMetadata: OrgMetadataTypes): OrgMetadataTypes {
   const cleanNodeMetadata = Object.keys(nodeMetadata).map((key) => {
     if (typeof nodeMetadata[key as keyof OrgMetadataTypes] === 'string') {
       return [key as keyof OrgMetadataTypes, cleanGexf(nodeMetadata[key as keyof OrgMetadataTypes] as string)];
+    }
+    if (nodeMetadata[key as keyof OrgMetadataTypes] instanceof Date) {
+      return [key as keyof OrgMetadataTypes, (nodeMetadata[key as keyof OrgMetadataTypes] as Date).toISOString()];
     }
     return [key as keyof OrgMetadataTypes, nodeMetadata[key as keyof OrgMetadataTypes]];
   });
