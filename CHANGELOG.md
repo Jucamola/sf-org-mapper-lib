@@ -1,3 +1,22 @@
+# [0.7.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.6.1...0.7.0) (2025-03-29)
+
+
+### Bug Fixes
+
+* add DeveloperName for CustomTab of type customObject ([93dbf53](https://github.com/Jucamola/sf-org-mapper-lib/commit/93dbf5396d78f1034213504178d206834119c0b4))
+* convert dates to string for gexf ([bdb770a](https://github.com/Jucamola/sf-org-mapper-lib/commit/bdb770a2bf6a593d95bcfe5513bc10666e0730a3))
+
+
+### Features
+
+* add CustomObject ([e177c84](https://github.com/Jucamola/sf-org-mapper-lib/commit/e177c84f886b7ed0ce6b832464936f4d8689a7f6))
+* add filters for manageable state and namespace prefixes ([dff543c](https://github.com/Jucamola/sf-org-mapper-lib/commit/dff543c090e89f398783a9cc9bae088772dfa6a2))
+* add filters for querying metadatas ([b137bf7](https://github.com/Jucamola/sf-org-mapper-lib/commit/b137bf74ac618167c11e52a46314ceac43a8f19c))
+* add StandardEntity ([f9f317b](https://github.com/Jucamola/sf-org-mapper-lib/commit/f9f317bb0988977b8803023eee9eabed06be8e99))
+* upgrade dependencies ([5971b58](https://github.com/Jucamola/sf-org-mapper-lib/commit/5971b5869bd5658f4e43da7b9c23730822481bb6))
+
+
+
 ## [0.6.1](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.6.0...0.6.1) (2025-03-29)
 
 
