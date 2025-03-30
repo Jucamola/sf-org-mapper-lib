@@ -9,6 +9,7 @@ import { Connection } from '@salesforce/core';
 import { ManageableState, OrgMetadataMap, Status } from '../types/sObjects';
 
 type SymbolTable = {
+  interfaces?: string[];
   tableDeclaration?: {
     annotations?: Array<{ name: string }>;
   };
@@ -44,6 +45,10 @@ export async function queryApexClasses(conn: Connection): Promise<OrgMetadataMap
           NamespacePrefix: record.NamespacePrefix as string,
           CreatedDate: new Date(record.CreatedDate as string),
           LastModifiedDate: new Date(record.LastModifiedDate as string),
+          IsQueueable: symbolTable?.interfaces?.includes('System.Queueable') as boolean,
+          IsBatchable: symbolTable?.interfaces?.includes('Database.Batchable') as boolean,
+          IsCallable: symbolTable?.interfaces?.includes('System.Callable') as boolean,
+          IsSchedulable: symbolTable?.interfaces?.includes('System.Schedulable') as boolean,
         },
       ];
     })

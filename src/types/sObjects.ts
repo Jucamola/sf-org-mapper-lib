@@ -55,6 +55,9 @@ type ApexCode = Metadata & {
 export type ApexClass = ApexCode & {
   Type: 'ApexClass';
   IsTest: boolean;
+  IsQueueable: boolean;
+  IsBatchable: boolean;
+  IsCallable: boolean;
 };
 
 export type ApexTrigger = ApexCode & {
