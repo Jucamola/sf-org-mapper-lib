@@ -45,10 +45,10 @@ export async function queryApexClasses(conn: Connection): Promise<OrgMetadataMap
           NamespacePrefix: record.NamespacePrefix as string,
           CreatedDate: new Date(record.CreatedDate as string),
           LastModifiedDate: new Date(record.LastModifiedDate as string),
-          IsQueueable: symbolTable?.interfaces?.includes('System.Queueable') as boolean,
-          IsBatchable: symbolTable?.interfaces?.includes('Database.Batchable') as boolean,
-          IsCallable: symbolTable?.interfaces?.includes('System.Callable') as boolean,
-          IsSchedulable: symbolTable?.interfaces?.includes('System.Schedulable') as boolean,
+          IsQueueable: symbolTable?.interfaces?.includes('System.Queueable') ?? false,
+          IsBatchable: symbolTable?.interfaces?.includes('Database.Batchable') ?? false,
+          IsCallable: symbolTable?.interfaces?.includes('System.Callable') ?? false,
+          IsSchedulable: symbolTable?.interfaces?.includes('System.Schedulable') ?? false,
         },
       ];
     })

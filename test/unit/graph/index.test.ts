@@ -36,6 +36,10 @@ describe('buildGraph', () => {
       NamespacePrefix: 'ns1',
       CreatedDate: new Date(),
       LastModifiedDate: new Date(),
+      IsQueueable: false,
+      IsBatchable: false,
+      IsCallable: false,
+      IsSchedulable: false,
     });
     apexClassMap.set('01p000000000002AAA', {
       Label: 'MyClass2',
@@ -50,6 +54,10 @@ describe('buildGraph', () => {
       NamespacePrefix: '',
       CreatedDate: new Date(),
       LastModifiedDate: new Date(),
+      IsQueueable: false,
+      IsBatchable: false,
+      IsCallable: false,
+      IsSchedulable: false,
     });
     orgMetadata.set('ApexClass', apexClassMap);
 
@@ -87,6 +95,10 @@ describe('buildGraph', () => {
       NamespacePrefix: 'ns1',
       CreatedDate: new Date(),
       LastModifiedDate: new Date(),
+      IsQueueable: false,
+      IsBatchable: false,
+      IsCallable: false,
+      IsSchedulable: false,
     });
     apexClassMap.set('01p000000000002AAA', {
       Label: 'MyClass2',
@@ -101,6 +113,10 @@ describe('buildGraph', () => {
       NamespacePrefix: '',
       CreatedDate: new Date(),
       LastModifiedDate: new Date(),
+      IsQueueable: false,
+      IsBatchable: false,
+      IsCallable: false,
+      IsSchedulable: false,
     });
     orgMetadata.set('ApexClass', apexClassMap);
 
