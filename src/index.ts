@@ -6,6 +6,6 @@
  */
 
 export { parseCSVFile } from './csv';
-export { queryMetadatas } from './metadata';
+export { queryMetadatas, queryPackage2Members } from './metadata';
 export { buildGraph } from './graph';
 export { writeGexf } from './gexf';

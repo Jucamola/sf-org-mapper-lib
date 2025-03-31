@@ -8,29 +8,41 @@
 import * as fs from 'node:fs';
 import createGraph, { Graph } from 'ngraph.graph';
 import gexf from 'ngraph.gexf';
-import { OrgMetadata, OrgMetadataTypeNames, OrgMetadataTypes } from '../types/sObjects';
+import { OrgMetadata, OrgMetadataTypeNames, OrgMetadataTypes, Package2MembersMap } from '../types/sObjects';
 
 export function writeGexf(
   cytoscapeCollection: cytoscape.CollectionReturnValue,
   fileName: string,
-  orgMetadata: OrgMetadata
+  orgMetadata: OrgMetadata,
+  package2MembersMap?: Package2MembersMap,
+  includeSubscriberPackage?: boolean
 ): void {
-  const ngraphGraph = buildGraph(cytoscapeCollection, orgMetadata);
+  const ngraphGraph = buildGraph(cytoscapeCollection, orgMetadata, package2MembersMap, includeSubscriberPackage);
   const gexfFile = gexf.save(ngraphGraph);
   fs.writeFileSync(fileName + '.gexf', gexfFile);
 }
 
-function buildGraph(cytoscapeCollection: cytoscape.CollectionReturnValue, orgMetadata: OrgMetadata): Graph {
+function buildGraph(
+  cytoscapeCollection: cytoscape.CollectionReturnValue,
+  orgMetadata: OrgMetadata,
+  package2MembersMap?: Package2MembersMap,
+  includeSubscriberPackage?: boolean
+): Graph {
   const ngraphGraph = createGraph();
 
   cytoscapeCollection.nodes().forEach((cyNode) => {
     const nodeId = cyNode.id();
     const type = cyNode.attr('Type') as OrgMetadataTypeNames;
     const nodeMetadata = orgMetadata.get(type)?.get(nodeId) ?? { Label: nodeId, Type: type };
+    let SubscriberPackageName;
+    if (includeSubscriberPackage) {
+      SubscriberPackageName = package2MembersMap?.get(nodeId);
+    }
     const { Label, ...nodeAttributes } = convertFormats(nodeMetadata as OrgMetadataTypes);
     ngraphGraph.addNode(nodeId, {
       label: cleanGexf(Label),
       ...nodeAttributes,
+      SubscriberPackageName,
     });
   });
 

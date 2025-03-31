@@ -20,10 +20,6 @@ type Metadata = {
   Type: OrgMetadataTypeNames;
 };
 
-type UtilsMetadata = {
-  Type: UtilsMetadataTypesNames;
-};
-
 type NodeData = Metadata & {
   Label: string;
 };
@@ -178,22 +174,6 @@ export type CustomObject = UnversionedMetadata & {
   Type: 'CustomObject';
 };
 
-export type Package2Member = UtilsMetadata & {
-  SubjectId: string;
-};
-
-export type SubscriberPackage = UtilsMetadata & {
-  Type: 'SubscriberPackage';
-  Name: string;
-  NamespacePrefix: string;
-  Package2Members?: Package2Member[];
-  CreatedDate: Date;
-  LastModifiedDate: Date;
-};
-
-export type UtilsMetadataTypes = SubscriberPackage;
-export type UtilsMetadataTypesNames = 'SubscriberPackage';
-
 export type Id = string;
 
 export type OrgMetadataTypes =
@@ -240,6 +220,4 @@ export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
 export type OrgMetadata = Map<OrgMetadataTypeNames, OrgMetadataMap>;
 
-export type UtilsMedataMap = Map<Id, UtilsMetadataTypes>;
-
-export type OrgUtilsMetadata = Map<UtilsMetadataTypesNames, UtilsMedataMap>;
+export type Package2MembersMap = Map<Id, string>;
