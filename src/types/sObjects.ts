@@ -16,9 +16,16 @@ export type MetadataComponentDependency = {
   RefMetadataComponentType: string;
 };
 
-type NodeData = {
-  Label: string;
+type Metadata = {
   Type: OrgMetadataTypeNames;
+};
+
+type UtilsMetadata = {
+  Type: UtilsMetadataTypesNames;
+};
+
+type NodeData = Metadata & {
+  Label: string;
 };
 
 export type ManageableState =
@@ -41,11 +48,11 @@ export type UnversionedMetadata = NodeData & {
   LastModifiedDate: Date;
 };
 
-export type Metadata = UnversionedMetadata & {
+export type VersionedMetadata = UnversionedMetadata & {
   ApiVersion: number;
 };
 
-type ApexCode = Metadata & {
+type ApexCode = VersionedMetadata & {
   Name: string;
   IsValid: boolean;
   LengthWithoutComments: number;
@@ -58,17 +65,18 @@ export type ApexClass = ApexCode & {
   IsQueueable: boolean;
   IsBatchable: boolean;
   IsCallable: boolean;
+  IsSchedulable: boolean;
 };
 
 export type ApexTrigger = ApexCode & {
   Type: 'ApexTrigger';
 };
 
-export type ApexComponent = Metadata & {
+export type ApexComponent = VersionedMetadata & {
   Type: 'ApexComponent';
 };
 
-export type ApexPage = Metadata & {
+export type ApexPage = VersionedMetadata & {
   Type: 'ApexPage';
 };
 
@@ -77,12 +85,12 @@ export type CustomApplication = UnversionedMetadata & {
   Type: 'CustomApplication';
 };
 
-export type AuraDefinitionBundle = Metadata & {
+export type AuraDefinitionBundle = VersionedMetadata & {
   DeveloperName: string;
   Type: 'AuraDefinitionBundle';
 };
 
-export type LightningComponentBundle = Metadata & {
+export type LightningComponentBundle = VersionedMetadata & {
   DeveloperName: string;
   Type: 'LightningComponentBundle';
   IsExposed: boolean;
@@ -99,7 +107,7 @@ export type CustomTab = UnversionedMetadata & {
   Type: 'CustomTab';
 };
 
-export type EmailTemplate = Metadata & {
+export type EmailTemplate = VersionedMetadata & {
   Name: string;
   Type: 'EmailTemplate';
 };
@@ -147,7 +155,7 @@ export type ProcessType =
   | 'SurveyEnrich'
   | 'Workflow';
 
-export type Flow = Metadata & {
+export type Flow = VersionedMetadata & {
   DeveloperName: string;
   Type: 'Flow';
   VersionNumber: number;
@@ -170,7 +178,23 @@ export type CustomObject = UnversionedMetadata & {
   Type: 'CustomObject';
 };
 
-type Id = string;
+export type Package2Member = UtilsMetadata & {
+  SubjectId: string;
+};
+
+export type SubscriberPackage = UtilsMetadata & {
+  Type: 'SubscriberPackage';
+  Name: string;
+  NamespacePrefix: string;
+  Package2Members?: Package2Member[];
+  CreatedDate: Date;
+  LastModifiedDate: Date;
+};
+
+export type UtilsMetadataTypes = SubscriberPackage;
+export type UtilsMetadataTypesNames = 'SubscriberPackage';
+
+export type Id = string;
 
 export type OrgMetadataTypes =
   | ApexClass
@@ -215,3 +239,7 @@ export type OrgMetadataTypeNames =
 export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 
 export type OrgMetadata = Map<OrgMetadataTypeNames, OrgMetadataMap>;
+
+export type UtilsMedataMap = Map<Id, UtilsMetadataTypes>;
+
+export type OrgUtilsMetadata = Map<UtilsMetadataTypesNames, UtilsMedataMap>;

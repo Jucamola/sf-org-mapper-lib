@@ -6,7 +6,14 @@
  */
 
 import { Connection } from '@salesforce/core';
-import { OrgMetadata, OrgMetadataTypeNames, OrgMetadataMap } from '../types/sObjects';
+import {
+  OrgMetadata,
+  OrgMetadataTypeNames,
+  OrgMetadataMap,
+  OrgUtilsMetadata,
+  UtilsMetadataTypesNames,
+  UtilsMedataMap,
+} from '../types/sObjects';
 import { queryApexClasses } from './apexClass';
 import { queryApexComponents } from './apexComponent';
 import { queryApexPages } from './apexPage';
@@ -25,6 +32,7 @@ import { queryLightningComponentBundles } from './lightningComponentBundle';
 import { queryCustomFields } from './customField';
 import { queryCustomObjects } from './customObject';
 import { queryStandardEntities } from './standardEntity';
+import { querySubscriberPackages } from './subscriberPackage';
 
 type QueryFunction = (conn: Connection) => Promise<OrgMetadataMap>;
 
@@ -92,4 +100,11 @@ export async function queryMetadatas(
   }
 
   return orgMetadata;
+}
+
+export async function queryUtilsMetadata(conn: Connection): Promise<OrgUtilsMetadata> {
+  const orgUtilsMetadata = new Map<UtilsMetadataTypesNames, UtilsMedataMap>();
+  const subscriberPackages = await querySubscriberPackages(conn);
+  orgUtilsMetadata.set('SubscriberPackage', subscriberPackages);
+  return orgUtilsMetadata;
 }
