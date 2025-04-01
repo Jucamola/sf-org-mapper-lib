@@ -1,3 +1,16 @@
+# [0.8.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.7.0...0.8.0) (2025-04-01)
+
+
+### Features
+
+* add build partial graphs ([d8a081d](https://github.com/Jucamola/sf-org-mapper-lib/commit/d8a081d25910aad661a7d8c2b521a34c748b5206))
+* add checks for interface implementations in apex classes ([a0a2427](https://github.com/Jucamola/sf-org-mapper-lib/commit/a0a2427c2c34d33f5434b8e8efccda06d05d0adc))
+* add entry point interfaces for apex ([6c12906](https://github.com/Jucamola/sf-org-mapper-lib/commit/6c1290668b5881116d12a2def9e34e32da47ad9b))
+* add SubscriberPackage ([07c9441](https://github.com/Jucamola/sf-org-mapper-lib/commit/07c944157a21b357ffc42b180e32fbecf06ed4f4))
+* removes SubscriberPackage and adds Package2Member ([7121029](https://github.com/Jucamola/sf-org-mapper-lib/commit/71210299c4101f833b4c3beee20bd8eb6fe0f04f))
+
+
+
 # [0.7.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.6.1...0.7.0) (2025-03-29)
 
 
