@@ -2,7 +2,19 @@
 
 const repl = require('repl');
 const { Org } = require('@salesforce/core');
-const { buildGraph, parseCSVFile, queryMetadatas, queryPackage2Members, writeGexf } = require('../lib/index');
+const {
+  buildGraph,
+  buildDependenciesGraph,
+  buildDependenciesGraphs,
+  buildDependenciesGraphWithoutRedundancy,
+  buildUsesGraph,
+  buildUsesGraphs,
+  buildUsesGraphWithoutRedundancy,
+  parseCSVFile,
+  queryMetadatas,
+  queryPackage2Members,
+  writeGexf,
+} = require('../lib/index');
 
 const startMessage = `
 Usage:
@@ -20,6 +32,12 @@ replServer.setupHistory('.repl_history', (err, repl) => {});
 
 const context = {
   buildGraph,
+  buildDependenciesGraph,
+  buildDependenciesGraphs,
+  buildDependenciesGraphWithoutRedundancy,
+  buildUsesGraph,
+  buildUsesGraphs,
+  buildUsesGraphWithoutRedundancy,
   parseCSVFile,
   queryMetadatas,
   queryPackage2Members,

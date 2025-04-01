@@ -221,3 +221,10 @@ export type OrgMetadataMap = Map<Id, OrgMetadataTypes>;
 export type OrgMetadata = Map<OrgMetadataTypeNames, OrgMetadataMap>;
 
 export type Package2MembersMap = Map<Id, string>;
+
+export type NodeReference =
+  | Id
+  | {
+      Label: string;
+      Type: OrgMetadataTypeNames;
+    };

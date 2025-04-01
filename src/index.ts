@@ -5,7 +5,7 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-export { parseCSVFile } from './csv';
-export { queryMetadatas, queryPackage2Members } from './metadata';
-export { buildGraph } from './graph';
-export { writeGexf } from './gexf';
+export * from './csv';
+export * from './metadata';
+export * from './graph';
+export * from './gexf';
