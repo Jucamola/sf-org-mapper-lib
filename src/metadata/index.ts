@@ -6,7 +6,13 @@
  */
 
 import { Connection } from '@salesforce/core';
-import { OrgMetadata, OrgMetadataTypeNames, OrgMetadataMap, Package2MembersMap } from '../types/sObjects';
+import {
+  OrgMetadata,
+  OrgMetadataTypeNames,
+  OrgMetadataMap,
+  Package2MembersMap,
+  MetadataComponentDependency,
+} from '../types/sObjects';
 import { queryApexClasses } from './apexClass';
 import { queryApexComponents } from './apexComponent';
 import { queryApexPages } from './apexPage';
@@ -26,6 +32,7 @@ import { queryCustomFields } from './customField';
 import { queryCustomObjects } from './customObject';
 import { queryStandardEntities } from './standardEntity';
 import { queryPackage2Members as queryPackage2MembersMetadata } from './package2Member';
+import { queryMetadataComponentDependencies as queryMetadataComponentDependenciesRecords } from './metadataComponentDependency';
 
 type QueryFunction = (conn: Connection) => Promise<OrgMetadataMap>;
 
@@ -97,4 +104,8 @@ export async function queryMetadatas(
 
 export async function queryPackage2Members(conn: Connection): Promise<Package2MembersMap> {
   return queryPackage2MembersMetadata(conn);
+}
+
+export async function queryMetadataComponentDependencies(conn: Connection): Promise<MetadataComponentDependency[]> {
+  return queryMetadataComponentDependenciesRecords(conn);
 }

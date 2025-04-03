@@ -13,6 +13,7 @@ const {
   parseCSVFile,
   queryMetadatas,
   queryPackage2Members,
+  queryMetadataComponentDependencies,
   writeGexf,
 } = require('../lib/index');
 
@@ -41,6 +42,7 @@ const context = {
   parseCSVFile,
   queryMetadatas,
   queryPackage2Members,
+  queryMetadataComponentDependencies,
   writeGexf,
   getConnection: async (username) => {
     const org = await Org.create({ aliasOrUsername: username });
