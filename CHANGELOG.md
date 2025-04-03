@@ -1,3 +1,12 @@
+# [0.9.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.8.0...0.9.0) (2025-04-03)
+
+
+### Features
+
+* add MetadataComponentDependecy ([1f58749](https://github.com/Jucamola/sf-org-mapper-lib/commit/1f58749ae220dc5d1cac960be089e3cec6ab41f5))
+
+
+
 # [0.8.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.7.0...0.8.0) (2025-04-01)
 
 
