@@ -40,7 +40,7 @@
     "@salesforce/ts-types": "^2.0.12",
     "@types/node": "^22.13.14",
     "csv-parse": "^5.6.0",
-    "cytoscape": "^3.31.1",
+    "cytoscape": "^3.31.2",
     "lodash": "^4.17.21",
     "ngraph.gexf": "^1.0.0",
     "ngraph.graph": "^20.0.1"
