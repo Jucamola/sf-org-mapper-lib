@@ -2,7 +2,7 @@
 
 Template npm library for Salesforce CLI and VSCode Extensions
 
-[![NPM](https://img.shields.io/npm/v/sf-org-mapper-lib.svg?label=sf-org-mapper-lib)](https://www.npmjs.com/package/sf-org-mapper-lib) [![Downloads/week](https://img.shields.io/npm/dw/sf-org-mapper-lib.svg)](https://npmjs.org/package/sf-org-mapper-lib) [![License](https://img.shields.io/badge/License-BSD%203--Clause-brightgreen.svg)](https://raw.githubusercontent.com/Jucamola/sf-org-mapper-lib/main/LICENSE.txt)
+[![NPM](https://img.shields.io/npm/v/sf-org-mapper-lib.svg?label=sf-org-mapper-lib)](https://www.npmjs.com/package/sf-org-mapper-lib) [![Downloads/week](https://img.shields.io/npm/dw/sf-org-mapper-lib.svg)](https://npmjs.org/package/sf-org-mapper-lib) [![License](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://opensource.org/license/apache-2-0)
 
 ## Using the template
 
