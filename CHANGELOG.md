@@ -1,3 +1,12 @@
+## [0.9.1](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.9.0...0.9.1) (2025-05-17)
+
+
+### Bug Fixes
+
+* **deps:** bump @salesforce/core from 8.8.7 to 8.11.0 ([#27](https://github.com/Jucamola/sf-org-mapper-lib/issues/27)) ([55cddac](https://github.com/Jucamola/sf-org-mapper-lib/commit/55cddac1b11180a2cbff2d36130caf0e5c8eb663))
+
+
+
 # [0.9.0](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.8.0...0.9.0) (2025-04-03)
 
 
