@@ -1,3 +1,12 @@
+## [0.9.4](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.9.3...0.9.4) (2025-06-09)
+
+
+### Bug Fixes
+
+* **deps:** bump @types/node from 22.13.14 to 22.15.30 ([#35](https://github.com/Jucamola/sf-org-mapper-lib/issues/35)) ([ca8a6b2](https://github.com/Jucamola/sf-org-mapper-lib/commit/ca8a6b29d50d17b24801d332700e28b8f7af75d1))
+
+
+
 ## [0.9.3](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.9.2...0.9.3) (2025-06-09)
 
 
