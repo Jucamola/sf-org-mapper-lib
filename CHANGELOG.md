@@ -1,3 +1,12 @@
+## [0.9.2](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.9.1...0.9.2) (2025-06-09)
+
+
+### Bug Fixes
+
+* **deps:** bump cytoscape from 3.31.1 to 3.32.0 ([#20](https://github.com/Jucamola/sf-org-mapper-lib/issues/20)) ([de7a12e](https://github.com/Jucamola/sf-org-mapper-lib/commit/de7a12e793ffa9a19f9d04cdfe1889122d2560cf))
+
+
+
 ## [0.9.1](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.9.0...0.9.1) (2025-05-17)
 
 
