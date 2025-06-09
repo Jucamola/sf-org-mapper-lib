@@ -1,3 +1,12 @@
+## [0.9.3](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.9.2...0.9.3) (2025-06-09)
+
+
+### Bug Fixes
+
+* **deps:** bump @jsforce/jsforce-node from 3.8.1 to 3.8.2 ([#30](https://github.com/Jucamola/sf-org-mapper-lib/issues/30)) ([1f3bd3a](https://github.com/Jucamola/sf-org-mapper-lib/commit/1f3bd3aa43226420c42b4cc5052cee62801e8f9b))
+
+
+
 ## [0.9.2](https://github.com/Jucamola/sf-org-mapper-lib/compare/0.9.1...0.9.2) (2025-06-09)
 
 
