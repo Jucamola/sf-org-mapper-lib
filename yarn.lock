@@ -456,6 +456,22 @@
     node-fetch "^2.6.1"
     xml2js "^0.6.2"
 
+"@jsforce/jsforce-node@^3.9.1":
+  version "3.9.4"
+  resolved "https://registry.yarnpkg.com/@jsforce/jsforce-node/-/jsforce-node-3.9.4.tgz#0d0e13d271c3921a3d5d58d5ee30a83c3d5f8f90"
+  integrity sha512-Lsq0DX2101QyJGzQDf0oKW5BdnheQPWTWZ294DnjBF4ooNlU9ClqFjiMvi0gE2AdGorc3P1fkCdLSzUCCrHVfg==
+  dependencies:
+    "@sindresorhus/is" "^4"
+    base64url "^3.0.1"
+    csv-parse "^5.5.2"
+    csv-stringify "^6.4.4"
+    faye "^1.4.0"
+    form-data "^4.0.4"
+    https-proxy-agent "^5.0.0"
+    multistream "^3.1.0"
+    node-fetch "^2.6.1"
+    xml2js "^0.6.2"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -503,12 +519,12 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@^8.11.0", "@salesforce/core@^8.12.0", "@salesforce/core@^8.8.0":
-  version "8.12.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.12.0.tgz#a458cc3e39f4e7df57d94f0deaaa0fd0660b18c9"
-  integrity sha512-LJIjoQ3UQJ1r/xxdQcaG5bU8MfxeO/LJhrfK/7LZeHVtp1iOIgedbwPuVNzTzYciDWh8elborarrPM4uWjtu5g==
+"@salesforce/core@^8.11.0", "@salesforce/core@^8.18.1", "@salesforce/core@^8.8.0":
+  version "8.18.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.18.5.tgz#8205f3b1ee9ef63740128bef81cc32213a76296a"
+  integrity sha512-zQSIjo0L0ddcZbj3Oxxig2J6aYL5H5FY45TpXAXpjGe0UPWNxXkU2mrcDfs9OSn0MhM3uMj4fUIM1a158/3Lug==
   dependencies:
-    "@jsforce/jsforce-node" "^3.8.2"
+    "@jsforce/jsforce-node" "^3.9.1"
     "@salesforce/kit" "^3.2.2"
     "@salesforce/schemas" "^1.9.0"
     "@salesforce/ts-types" "^2.0.10"
@@ -516,7 +532,7 @@
     change-case "^4.1.2"
     fast-levenshtein "^3.0.0"
     faye "^1.4.0"
-    form-data "^4.0.0"
+    form-data "^4.0.4"
     js2xmlparser "^4.0.1"
     jsonwebtoken "9.0.2"
     jszip "3.10.1"
@@ -2152,12 +2168,12 @@ eslint-plugin-jsdoc@^46.10.1:
     semver "^7.5.4"
     spdx-expression-parse "^4.0.0"
 
-eslint-plugin-sf-plugin@^1.20.25:
-  version "1.20.25"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-sf-plugin/-/eslint-plugin-sf-plugin-1.20.25.tgz#943d861c73579d982a2c09eb5d8d5907cfdd7956"
-  integrity sha512-uknNSP5+CRHeA7PRGErKD5nCoehJY/UVofspAiwEmtzhNBfS1eUxORN9fU6WEjb9Mc3O6i7YrMznTYFhJYWr1Q==
+eslint-plugin-sf-plugin@^1.20.29:
+  version "1.20.29"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sf-plugin/-/eslint-plugin-sf-plugin-1.20.29.tgz#2ac1705753e755ff411be8246a2f79adaea07755"
+  integrity sha512-yMcmHWL/uMPj0JHNKditfyo9URfJ1s6BVEWfPACM1jzQ+Q6ed0CJDeUNiw3/VrYMV5mzjaqIzJtUU+rxwwXOZA==
   dependencies:
-    "@salesforce/core" "^8.12.0"
+    "@salesforce/core" "^8.18.1"
     "@typescript-eslint/utils" "^7.18.0"
 
 eslint-plugin-unicorn@^50.0.1:
@@ -2495,6 +2511,17 @@ form-data@^4.0.0:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
     es-set-tostringtag "^2.1.0"
+    mime-types "^2.1.12"
+
+form-data@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.4.tgz#784cdcce0669a9d68e94d11ac4eea98088edd2c4"
+  integrity sha512-KrGhL9Q4zjj0kiUt5OO4Mr/A/jlI2jDYs5eHBpYHPcBEVSiipAvn2Ko2HnPe20rmcuuvMHNdZFp+4IlGTMF0Ow==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    es-set-tostringtag "^2.1.0"
+    hasown "^2.0.2"
     mime-types "^2.1.12"
 
 fromentries@^1.2.0:
