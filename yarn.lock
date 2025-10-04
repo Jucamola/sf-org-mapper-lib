@@ -4042,10 +4042,10 @@ ngraph.graph@20.0.0:
   dependencies:
     ngraph.events "^1.2.1"
 
-ngraph.graph@^20.0.1:
-  version "20.0.1"
-  resolved "https://registry.yarnpkg.com/ngraph.graph/-/ngraph.graph-20.0.1.tgz#579470d1d805583239704dc913e2095540aaf371"
-  integrity sha512-VFsQ+EMkT+7lcJO1QP8Ik3w64WbHJl27Q53EO9hiFU9CRyxJ8HfcXtfWz/U8okuoYKDctbciL6pX3vG5dt1rYA==
+ngraph.graph@^20.1.0:
+  version "20.1.0"
+  resolved "https://registry.yarnpkg.com/ngraph.graph/-/ngraph.graph-20.1.0.tgz#591143de153dc2b879b782542b00993e6b2136a0"
+  integrity sha512-1jorNgIc0Kg0L9bTNN4+RCrVvbZ+4pqGVMrbhX3LLyqYcRdLvAQRRnxddmfj9l5f6Eq59SUTfbYZEm8cktiE7Q==
   dependencies:
     ngraph.events "^1.2.1"
 
